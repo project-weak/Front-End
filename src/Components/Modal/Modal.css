@@ -1,0 +1,15 @@
+.custom-modal .modal-content {
+    background-color: rgba(86, 81, 81, 0.8); 
+    border: none;
+    border-radius: 10px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+}
+
+.custom-modal .modal-header,
+.custom-modal .modal-footer {
+    border: none;
+}
+
+.custom-modal .modal-header .close {
+    outline: none;
+}
