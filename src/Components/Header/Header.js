@@ -1,26 +1,25 @@
 import { Link } from 'react-router-dom';
 // This import is for BootStrap NavBar
-import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
+import '../Header/Header.css'
 
-import '../Header/Header.css';
-import { hover } from '@testing-library/user-event/dist/hover';
 
 
 
 function Header(){
-  return (
+  return (<>
 <Nav className='backgroundColorNavBar'>
       <Nav.Item >
-        <Nav.Link style={{color:'white'}}  as={Link} to="/">Home</Nav.Link>
+        <Nav.Link className='link' as={Link} to="/">Home</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link style={{color:'white'}} as={Link} to="/Library">Your Library</Nav.Link>
+        <Nav.Link className='link' as={Link} to="/Library">Your Library</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link style={{color:'white'}} as={Link} to="/about">About Us</Nav.Link>
+        <Nav.Link className='link' as={Link} to="/about">About Us</Nav.Link>
       </Nav.Item>
     </Nav>
+    </>
   );
 }
 
