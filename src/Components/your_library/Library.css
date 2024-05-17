@@ -1,0 +1,15 @@
+.liked-playlist-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.liked-playlist-section button {
+    border: none;
+    color: #fdf6fd;
+    background-color: #135D66;
+    text-decoration: underline white;
+}
+
+
+
