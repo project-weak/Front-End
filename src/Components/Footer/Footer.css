@@ -1,0 +1,12 @@
+.textCenterArea{
+    color: white;
+    background-color:rgb(78, 127, 192);
+    text-align: center;
+} 
+.logo{
+    color: white !important;
+}
+.line{
+    padding: 1rem;
+    margin:0% 5%;
+}
