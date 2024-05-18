@@ -1,45 +1,19 @@
 import { useState } from 'react';
-import musicData from '../Data/musicData.json'; 
-import Cards from '../Card/Card';
-import $Modal from '../Modal/Modal'; 
-import { Container, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import './search.css';
 
-
-
 function Search() {
-  const [query, setQuery] = useState(''); 
-  const [searchedSongs, setSearchedSongs] = useState([]); //This state variable holds the list of songs that match the search query.
-  const [showModal, setShowModal] = useState(false); 
-  const [selectedSong, setSelectedSong] = useState(''); // State to hold the currently selected song
+  const [query, setQuery] = useState('');
+  const navigate = useNavigate();
 
-
-  const handleInputChange = (event) => {// updates the search query state whenever the user types 
+  const handleInputChange = (event) => {
     setQuery(event.target.value);
   };
 
-  const handleKeyDown = (event) => {//for retriving song when user types enter
+  const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
-      const searchTerms = query.toLowerCase().split(' ').filter(term => term);
-      const matchingData = musicData.filter(data => {
-        const songName = data.songName.toLowerCase();
-        const artistName = data.artistName.toLowerCase();
-        const combined = `${songName} ${artistName}`;
-        return searchTerms.every(term => combined.includes(term));
-      });
-
-      setSearchedSongs(matchingData);
+      navigate(`/search?query=${query}`);
     }
-  };
-
-  const handleShowModal = (song) => {
-    setSelectedSong(song);
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-    setSelectedSong(null);
   };
 
   return (
@@ -49,30 +23,19 @@ function Search() {
         value={query}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
-        placeholder="Search for an artist or song"
-        className="search-bar" 
+        placeholder="Search for an artist or a song"
+        className="search-bar"
       />
-
-      <Container className="my-4">
-        <Row className="d-flex flex-wrap justify-content-left">
-          {searchedSongs.map((song, index) => (
-            <Cards key={index} data={song} onPlay={() => handleShowModal(song)} />
-          ))}
-        </Row>
-      </Container>
-
-      {selectedSong && (
-        <$Modal
-          handleCloseModal={handleCloseModal}
-          showModal={showModal}
-          song={selectedSong} 
-        />
-      )}
     </>
   );
 }
 
 export default Search;
+
+
+
+
+
 
 
 /*

@@ -1,0 +1,38 @@
+
+.my-4 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .d-flex {
+    display: flex;
+  }
+  
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  
+  .justify-content-left {
+    justify-content: left;
+  }
+  
+
+  .card {
+    margin-right: 20px;
+    margin-bottom: 20px;
+    
+  }
+  
+
+  /* .card img {
+    max-width: 100%;
+    height: auto;
+  } */
+  
+
+  p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }

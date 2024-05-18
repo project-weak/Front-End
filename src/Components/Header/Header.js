@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 // This import is for BootStrap NavBar
 import Nav from 'react-bootstrap/Nav';
 import '../Header/Header.css'
-
+import Search from '../Search/search';
 
 
 
@@ -18,6 +18,8 @@ function Header(){
       <Nav.Item>
         <Nav.Link className='link' as={Link} to="/about">About Us</Nav.Link>
       </Nav.Item>
+      
+      <Search />
     </Nav>
     </>
   );
