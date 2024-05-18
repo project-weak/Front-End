@@ -1,0 +1,16 @@
+.backgroundColorNavBar{
+    display: flex !important;
+    justify-content: space-around;
+    background-color:rgb(78, 127, 192);
+    width: 100%;
+    
+}
+.link{
+    color:white !important;
+    
+
+}
+.link:hover{
+    color:gold !important;
+}
+
