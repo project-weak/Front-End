@@ -42,8 +42,8 @@ function Cards(props) {
     return (
 
         <>
-            <Card style={{ width: '18rem', backgroundColor: "#00ADB5", color: "#fdf6fd", fontSize:"20px", fontWeight:700 }} key={props.id}>
-                <Card.Img style={{ height: "200px" }} variant="top" src={props.data.albumCover} />
+            <Card style={{ width: '18rem', backgroundColor: "#1B1A55", color: "#76ABAE", fontSize:"20px", fontWeight:700 }} key={props.id}>
+                <Card.Img style={{ height: "200px" }} variant="top" src="https://e.snmc.io/i/600/s/4354ef5dc08ebcd49a50f0323ffe4aac/12061612" />
                 <Card.Body className='bodyCard d-flex flex-column justify-content-between'>
                     <Card.Title style={{ color: "#E3FEF7" }}>{props.title}</Card.Title>
                     <Card.Text>
