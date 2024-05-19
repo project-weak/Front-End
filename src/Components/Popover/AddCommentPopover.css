@@ -1,0 +1,67 @@
+/* src/Components/Popover/AddCommentPopover.css */
+#popover-basic {
+    max-width: 300px;
+    box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.5); /* Add shadow for more depth */
+    border: 1px solid #444; /* Darker border for a more defined look */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.popover-header {
+    background-color: #333;
+    color: #fff;
+    border-bottom: 1px solid #444;
+    border-top-left-radius: 10px; /* Rounded corners for top-left */
+    border-top-right-radius: 10px; /* Rounded corners for top-right */
+    padding: 10px 15px; /* Add some padding for better spacing */
+}
+
+.popover-body {
+    background-color: #2C2C2C;
+    color: #fff;
+    padding: 15px; /* Add padding for a cleaner look */
+    border-bottom-left-radius: 10px; /* Rounded corners for bottom-left */
+    border-bottom-right-radius: 10px; /* Rounded corners for bottom-right */
+}
+
+.btn-primary {
+    background-color: #E3FEF7;
+    color: #2C2C2C;
+    border: none;
+    border-radius: 5px; /* Slightly rounded buttons */
+    padding: 5px 10px; /* Padding for better click area */
+    margin-left: 10px; /* Space between buttons */
+}
+
+.btn-primary:hover {
+    background-color: #D1F3EC;
+    color: #2C2C2C;
+}
+
+.btn-secondary {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px; /* Slightly rounded buttons */
+    padding: 5px 10px; /* Padding for better click area */
+    margin-right: 10px; /* Space between buttons */
+}
+
+.btn-secondary:hover {
+    background-color: #666;
+    color: #fff;
+}
+
+.form-control {
+    background-color: #444; /* Dark background for the text field */
+    color: #fff; /* White text color */
+    border: 1px solid #555; /* Darker border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding for a better text field */
+}
+
+.form-control:focus {
+    background-color: #555; /* Slightly lighter on focus */
+    color: #fff;
+    border-color: #777; /* Lighter border on focus */
+    box-shadow: none; /* Remove default focus shadow */
+}
