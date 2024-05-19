@@ -1,0 +1,100 @@
+.custom-card {
+    width: 20rem;
+    background-color: #2C2C2C !important; 
+    color: #fdf6fd !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+}
+
+.custom-card:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+.custom-card-img {
+    height: 200px !important;
+    object-fit: cover !important;
+    border-bottom: 1px solid #fdf6fd !important; 
+}
+.custom-card-title {
+    color: #E3FEF7;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.custom-card-text {
+    color: #fdf6fd;
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.custom-card .btn-primary {
+    background-color: #1E90FF !important; 
+    border-color: #1E90FF !important;
+    color: #fff !important;
+}
+
+.custom-card .btn-primary:hover {
+    background-color: hsl(210, 70%, 30%) !important;
+    border-color: #1C86EE !important;
+}
+
+.custom-card .btn-danger {
+    background-color: #FF6347 !important;
+    border-color: #FF6347 !important;
+    color: #fff !important;
+}
+
+.custom-card .btn-danger:hover {
+    background-color: #FF4500 !important;
+    border-color: #FF4500 !important;
+}
+
+.custom-card .btn-success {
+    background-color: hsl(12, 79%, 50%) !important;
+    border-color: #e05328 !important;
+    color: #fff !important;
+}
+
+.custom-card .btn-success:hover {
+    background-color: hsl(7, 92%, 50%) !important;
+    border-color: hsl(30, 80%, 49%) !important;
+}
+
+.custom-card .btn-warning {
+    background-color: #FFD700 !important; 
+    border-color: #FFD700 !important;
+    color: #fff !important;
+}
+
+.custom-card .btn-warning:hover {
+    background-color: hsl(47, 94%, 40%) !important;
+    border-color: #FFC700 !important;
+}
+.custom-card {
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    max-width: 75%;
+    max-height: 50%;
+    overflow: hidden;
+    transform-origin: center;
+}
+
+.custom-card:hover {
+    transform: scale(1.05);
+}
+/* CSS */
+.custom-button {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-button:hover {
+    background-color: hsl(45, 94%, 56%);
+    color: #212529;
+}
