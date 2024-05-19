@@ -1,8 +1,7 @@
 
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Card as BootstrapCard, Button, Col } from 'react-bootstrap';
 import $Modal from '../Modal/Modal';
 

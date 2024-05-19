@@ -1,16 +1,17 @@
-.backgroundColorNavBar{
-    display: flex !important;
-    justify-content: space-around;
-    background-color:rgb(78, 127, 192);
+.backgroundColorNavBar {
+    background-color: rgb(78, 127, 192);
     width: 100%;
-    
-}
-.link{
-    color:white !important;
-    
+    height: 70px;
+    min-height: 70px;
 
 }
-.link:hover{
-    color:gold !important;
+
+.link {
+    color: white !important;
+    margin-left:20px; 
+    margin-top: 10px;
 }
 
+.link:hover {
+    color: gold !important;
+}
