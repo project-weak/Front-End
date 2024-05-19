@@ -1,16 +1,29 @@
+// src/Components/Card/Card.js
 import React, { useState } from 'react';
 import { Card as BootstrapCard, Button, Col } from 'react-bootstrap';
+import AddCommentPopover from '../Popover/AddCommentPopover'; // استيراد AddCommentPopover
 import $Modal from '../Modal/Modal';
 import PropTypes from 'prop-types';
-import './Card.css'; // تأكد من أن هذا المسار صحيح
+import './Card.css'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPlus, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 function Cards(props) {
     const data = props.data;
     
     const [showModal, setShowModal] = useState(false);
+    const [showPopover, setShowPopover] = useState({});
 
     const handleCloseModal = () => setShowModal(false);
     const handleShowModal = () => setShowModal(true);
+
+    const handleHidePopover = (type) => {
+        setShowPopover((prevState) => ({ ...prevState, [type]: false }));
+    };
+
+    const handleShowPopover = (type) => {
+        setShowPopover((prevState) => ({ ...prevState, [type]: true }));
+    };
 
     return (
         <>
@@ -32,9 +45,29 @@ function Cards(props) {
                                 </>
                             ) : (
                                 <>
-                                    <Button variant="success" className="mx-1 flex-grow-1" onClick={props.addToLiked}>Like</Button>
-                                    <Button variant="warning" className="mx-1 flex-grow-1" onClick={props.addToPlaylist}>Add</Button>
-                                    <Button variant="primary" className="ml-1 flex-grow-1" onClick={handleShowModal}>Play</Button>
+                                    <AddCommentPopover
+                                        songId={data.id}
+                                        actionType="like"
+                                        show={showPopover.like}
+                                        onShow={() => handleShowPopover('like')}
+                                        onHide={() => handleHidePopover('like')}
+                                        triggerElement={<Button variant="success" className="mx-1 flex-grow-1 custom-button" onClick={() => handleShowPopover('like')}>
+                                            <FontAwesomeIcon icon={faHeart} />
+                                        </Button>}
+                                    />
+                                    <AddCommentPopover
+                                        songId={data.id}
+                                        actionType="add"
+                                        show={showPopover.add}
+                                        onShow={() => handleShowPopover('add')}
+                                        onHide={() => handleHidePopover('add')}
+                                        triggerElement={<Button variant="warning" className="mx-1 flex-grow-1 custom-button" onClick={() => handleShowPopover('add')}>
+                                            <FontAwesomeIcon icon={faPlus} />
+                                        </Button>}
+                                    />
+                                    <Button variant="primary" className="ml-1 flex-grow-1 custom-button" onClick={handleShowModal}>
+                                        <FontAwesomeIcon icon={faPlay} />
+                                    </Button>
                                 </>
                             )}
                         </div>

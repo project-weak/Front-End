@@ -7,10 +7,11 @@ import Cards from '../Card/Card';
 
 function CardList(props) {
     const { data, location } = props;
-
+    const keys = Object.keys(data);
+    //console.log(data)
     const sections = [
-        { title: "Popular Songs", songs: data.slice(0, 5), sliderSettings: { dots: true, arrows: true, infinite: false, speed: 500, slidesToShow: 1, slidesToScroll: 1, rows: 1, slidesPerRow: 4 } },
-        { title: "Trending Songs", songs: data.slice(5, 10), sliderSettings: { dots: true, arrows: true, infinite: false, speed: 500, slidesToShow: 1, slidesToScroll: 1, rows: 1, slidesPerRow: 4 } },
+        { title: keys[0], songs: data.papulor.slice(0), sliderSettings: { dots: true, arrows: true, infinite: false, speed: 500, slidesToShow: 1, slidesToScroll: 1, rows: 1, slidesPerRow: 4 } },
+        { title: keys[1], songs: data.top.slice(0), sliderSettings: { dots: true, arrows: true, infinite: false, speed: 500, slidesToShow: 1, slidesToScroll: 1, rows: 1, slidesPerRow: 4 } },
     ];
 
     return (

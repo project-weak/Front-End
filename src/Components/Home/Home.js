@@ -10,10 +10,10 @@ const Home = () => {
 
     
     const getMusicData = () => {
-        const url = `http://localhost:3001/`;
+        const url = `https://back-end-10.onrender.com/`;
         axios.get(url)
             .then((response) => {
-             // console.log(response.data)
+              console.log(response.data)
                 setMusic(response.data);
             }).catch((error) => {
                 console.log(error);
@@ -21,12 +21,12 @@ const Home = () => {
 
     }
 
-    useEffect(()=> getMusicData())
+    useEffect(()=> getMusicData(),[])
 
   return (
     <>
     
-   <CardList data={music}  location="home"/>
+   <CardList data={music}  location="home"/> 
    </>
   );
 }
