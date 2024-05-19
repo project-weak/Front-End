@@ -1,13 +1,15 @@
-
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import React, { useState } from 'react';
+<<<<<<< Updated upstream
+import  { useState } from 'react';
+=======
+import { useState } from 'react';
+>>>>>>> Stashed changes
 import { Card as BootstrapCard, Button, Col } from 'react-bootstrap';
 import $Modal from '../Modal/Modal';
 
 function Cards(props) {
-const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     const handleCloseModal = () => setShowModal(false);
     const handleShowModal = () => setShowModal(true);
@@ -49,7 +51,7 @@ const [showModal, setShowModal] = useState(false);
     return (
 
         <>
-            <Card style={{ width: '18rem', backgroundColor: "#1B1A55", color: "#76ABAE", fontSize:"20px", fontWeight:700 }} key={props.id}>
+            <Card style={{ width: '18rem', backgroundColor: "#1B1A55", color: "#76ABAE", fontSize: "20px", fontWeight: 700 }} key={props.id}>
                 <Card.Img style={{ height: "200px" }} variant="top" src="https://e.snmc.io/i/600/s/4354ef5dc08ebcd49a50f0323ffe4aac/12061612" />
                 <Card.Body className='bodyCard d-flex flex-column justify-content-between'>
                     <Card.Title style={{ color: "#E3FEF7" }}>{props.title}</Card.Title>
@@ -95,9 +97,9 @@ const [showModal, setShowModal] = useState(false);
                     </BootstrapCard.Body>
                 </BootstrapCard>
             </Col>
-            <$Modal handleCloseModal={handleCloseModal} showModal={showModal}/>
+            <$Modal handleCloseModal={handleCloseModal} showModal={showModal} />
 
-            
+
 
         </>
     );
