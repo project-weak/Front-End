@@ -1,10 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-<<<<<<< Updated upstream
 import  { useState } from 'react';
-=======
-import { useState } from 'react';
->>>>>>> Stashed changes
 import { Card as BootstrapCard, Button, Col } from 'react-bootstrap';
 import $Modal from '../Modal/Modal';
 
