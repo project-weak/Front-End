@@ -1,0 +1,78 @@
+.custom-card {
+    width: 20rem;
+    background-color: #2C2C2C !important; /* لون الخلفية الداكنة */
+    color: #fdf6fd !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+}
+
+.custom-card:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+.custom-card-img {
+    height: 200px !important;
+    object-fit: cover !important;
+    border-bottom: 1px solid #fdf6fd !important; /* لون الحدود السفلى */
+}
+
+.custom-card-title {
+    color: #E3FEF7 !important; /* لون النص الفاتح */
+    font-size: 1.5rem !important;
+}
+
+.custom-card-text {
+    color: #fdf6fd !important;
+    font-size: 1rem !important;
+}
+
+.custom-card .btn-primary {
+    background-color: #1E90FF !important; /* لون الزر الأزرق الداكن */
+    border-color: #1E90FF !important;
+    color: #fff !important;
+}
+
+.custom-card .btn-primary:hover {
+    background-color: #1C86EE !important;
+    border-color: #1C86EE !important;
+}
+
+.custom-card .btn-danger {
+    background-color: #FF6347 !important; /* لون الزر الأحمر الداكن */
+    border-color: #FF6347 !important;
+    color: #fff !important;
+}
+
+.custom-card .btn-danger:hover {
+    background-color: #FF4500 !important;
+    border-color: #FF4500 !important;
+}
+
+.custom-card .btn-success {
+    background-color: #32CD32 !important; /* لون الزر الأخضر الداكن */
+    border-color: #32CD32 !important;
+    color: #fff !important;
+}
+
+.custom-card .btn-success:hover {
+    background-color: #2E8B57 !important;
+    border-color: #2E8B57 !important;
+}
+
+.custom-card .btn-warning {
+    background-color: #FFD700 !important; /* لون الزر الأصفر الداكن */
+    border-color: #FFD700 !important;
+    color: #fff !important;
+}
+
+.custom-card .btn-warning:hover {
+    background-color: #FFC700 !important;
+    border-color: #FFC700 !important;
+}
+

@@ -12,10 +12,10 @@ function $Modal(props) {
             className="custom-modal"
         >
             <BootstrapModal.Header closeButton>
-                <BootstrapModal.Title>Player</BootstrapModal.Title>
+                <BootstrapModal.Title>playlist</BootstrapModal.Title>
             </BootstrapModal.Header>
             <BootstrapModal.Body>
-                <SoundPlayer />
+                <SoundPlayer sound={props.music.audio} />
             </BootstrapModal.Body>
             <BootstrapModal.Footer>
                 <Button variant="secondary" onClick={props.handleCloseModal}>Close</Button>
