@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 // This import is for BootStrap NavBar
 import Nav from 'react-bootstrap/Nav';
 import '../Header/Header.css'
-import Search from '../Search/search';
+// import Button from 'react-bootstrap/Button';
 
-
+import { Navbar, Form, FormControl, Button } from 'react-bootstrap'
 
 function Header(){
   return (<>
@@ -19,7 +19,18 @@ function Header(){
         <Nav.Link className='link' as={Link} to="/about">About Us</Nav.Link>
       </Nav.Item>
       
-      <Search />
+      <Form inline className="ml-auto">
+          <FormControl
+            type="search"
+            placeholder="Search"
+            // className="mr-sm-2"
+            aria-label="Search"
+            // onChange={}
+          />
+          <Button variant="outline-success">Search</Button>
+        </Form>
+       
+      {/* <Search /> */}
     </Nav>
     </>
   );
