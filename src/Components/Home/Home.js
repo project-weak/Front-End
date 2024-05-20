@@ -23,7 +23,7 @@ const Home = () => {
         const url = `http://localhost:3005/`;
         axios.get(url)
             .then((response) => {
-              console.log(response.data)
+             console.log(response.data)
                 setMusic(response.data);
             }).catch((error) => {
                 console.log(error);

@@ -47,6 +47,7 @@
 }
 
 .custom-card .btn-danger {
+    margin-left: 15px;
     background-color: #FF6347 !important;
     border-color: #FF6347 !important;
     color: #fff !important;
