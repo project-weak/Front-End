@@ -8,10 +8,10 @@ import Cards from '../Card/Card';
 function CardList(props) {
     const { data, location } = props;
     const keys = Object.keys(data);
-    //console.log(data)
+    console.log(data)
     const sections = [
-        { title: keys[0], songs: data.papulor.slice(0), sliderSettings: { dots: true, arrows: true, infinite: false, speed: 500, slidesToShow: 1, slidesToScroll: 1, rows: 1, slidesPerRow: 4 } },
-        { title: keys[1], songs: data.top.slice(0), sliderSettings: { dots: true, arrows: true, infinite: false, speed: 500, slidesToShow: 1, slidesToScroll: 1, rows: 1, slidesPerRow: 4 } },
+        { title: keys[0], songs: data?.papulor?.slice(0) || [], sliderSettings: { dots: true, arrows: true, infinite: false, speed: 500, slidesToShow: 1, slidesToScroll: 1, rows: 1, slidesPerRow: 4 } },
+        { title: keys[1], songs: data?.top?.slice(0) || [], sliderSettings: { dots: true, arrows: true, infinite: false, speed: 500, slidesToShow: 1, slidesToScroll: 1, rows: 1, slidesPerRow: 4 } },
     ];
 
     return (
@@ -21,7 +21,7 @@ function CardList(props) {
                     <h2 className='section-title'>{section.title}</h2>
                     <div className="slider-container">
                         <Slider {...section.sliderSettings}>
-                            
+
                             {section.songs.map((song, index) => (
                                 <div key={index}>
                                     <Cards data={song} location={location} />
