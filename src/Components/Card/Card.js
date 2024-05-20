@@ -1,4 +1,4 @@
-// src/Components/Card/Card.js
+
 import React, { useState } from 'react';
 import { Card as BootstrapCard, Button, Col } from 'react-bootstrap';
 import AddCommentPopover from '../Popover/AddCommentPopover'; 
@@ -19,13 +19,15 @@ function Cards(props) {
 
     const handleHidePopover = (type) => {
         setShowPopover((prevState) => ({ ...prevState, [type]: false }));
-        
     };
-
+    
     const handleShowPopover = (type) => {
-        setShowPopover((prevState) => ({ ...prevState, [type]: true }));
+  
+        Object.keys(showPopover).forEach(key => {
+            setShowPopover(prevState => ({ ...prevState, [key]: key === type }));
+        });
     };
-
+    
     return (
         <>
             <Col>

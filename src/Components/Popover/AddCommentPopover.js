@@ -1,4 +1,4 @@
-// src/Components/Popover/AddCommentPopover.js
+
 import React, { useState, useEffect } from 'react';
 import { Popover, OverlayTrigger, Button, Form } from 'react-bootstrap';
 import axios from 'axios';
@@ -20,15 +20,8 @@ function AddCommentPopover({ songId, actionType, triggerElement, show, onShow, o
     };
 
     const handleSubmit = () => {
-        console.log(actionType);
-        // const payload = {
-        //     music_name: data.music_name,
-        //     singer_name:  data.singer_name,
-        //     url_image: data.url_image,
-        //     audio: data.audio,
-        //     comment: comment,
-        //     table: actionType
-        //   }
+       
+      
 
         axios.post('https://back-end-10.onrender.com/addMusic',{
             music_name: data.music_name,
