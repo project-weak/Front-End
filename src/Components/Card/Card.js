@@ -26,20 +26,19 @@ function Cards(props) {
         setShowPopover((prevState) => ({ ...prevState, [type]: true }));
     };
 
+    const handleDelete = () =>{ 
+
+    }
+
     return (
         <>
 
                         <div className="mt-auto d-flex justify-content-between">
                             {props.location === 'library' ? (
-                            <>
-                            <Button variant="primary" className="mr-1 flex-grow-1 mr-2 btn-sm" onClick={handleShowModal}>
-                                <FontAwesomeIcon icon={faPlay} />
-                            </Button>
-                            <Button variant="danger" className="ml-1 flex-grow-1 mr-2 btn-sm" onClick={props.deleteSong}>
-                                <FontAwesomeIcon icon={faTrash} />
-                            </Button>
-                        </>
-                        
+                                <>
+                                    <Button variant="primary" className="mr-1 flex-grow-1" onClick={handleShowModal}>Play</Button>
+                                    <Button variant="danger" className="ml-1 flex-grow-1" onClick={handleDelete}>Delete</Button>
+                                </>
                             ) : (
                                 <>
                                     <AddCommentPopover

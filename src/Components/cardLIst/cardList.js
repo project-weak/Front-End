@@ -24,8 +24,8 @@ function CardList(props) {
 
     return (
         <div className='cardlist-container'>
-            {sections.map((section, sectionIndex) => (
-                <div key={sectionIndex} className='section'>
+            {sections.map((section) => (
+                <div key={props.id} className='section'>
                     <h2 className='section-title'>{section.title}</h2>
                     <div className="slider-container">
                         <Slider {...section.sliderSettings} afterChange={(current) => handleAfterChange(sectionIndex, current)}>
