@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 import './AddCommentPopover.css';
 
-function AddCommentPopover({ songId, actionType, triggerElement, show, onShow, onHide }) {
+function AddCommentPopover({ songId, actionType, triggerElement, show, onShow, onHide,data }) {
     const [comment, setComment] = useState('');
 
     useEffect(() => {
@@ -20,16 +20,27 @@ function AddCommentPopover({ songId, actionType, triggerElement, show, onShow, o
     };
 
     const handleSubmit = () => {
-        const payload = {
-            songId: songId,
-            comment: comment,
-            actionType: actionType,
-        };
+        console.log(actionType);
+        // const payload = {
+        //     music_name: data.music_name,
+        //     singer_name:  data.singer_name,
+        //     url_image: data.url_image,
+        //     audio: data.audio,
+        //     comment: comment,
+        //     table: actionType
+        //   }
 
-        axios.post('/api/saveComment', payload)
+        axios.post('https://back-end-10.onrender.com/addMusic',{
+            music_name: data.music_name,
+            singer_name:  data.singer_name,
+            url_image: data.url_image,
+            audio: data.audio,
+            comment: comment,
+            table:actionType
+          })
             .then(response => {
                 console.log('Comment saved successfully');
-                onHide(); // Close the popover after saving the comment
+                onHide(); 
             })
             .catch(error => {
                 console.error('There was an error saving the comment!', error);

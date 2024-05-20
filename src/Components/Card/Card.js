@@ -1,7 +1,7 @@
 // src/Components/Card/Card.js
 import React, { useState } from 'react';
 import { Card as BootstrapCard, Button, Col } from 'react-bootstrap';
-import AddCommentPopover from '../Popover/AddCommentPopover'; // استيراد AddCommentPopover
+import AddCommentPopover from '../Popover/AddCommentPopover'; 
 import $Modal from '../Modal/Modal';
 import PropTypes from 'prop-types';
 import './Card.css'; 
@@ -19,6 +19,7 @@ function Cards(props) {
 
     const handleHidePopover = (type) => {
         setShowPopover((prevState) => ({ ...prevState, [type]: false }));
+        
     };
 
     const handleShowPopover = (type) => {
@@ -47,7 +48,8 @@ function Cards(props) {
                                 <>
                                     <AddCommentPopover
                                         songId={data.id}
-                                        actionType="like"
+                                        data={data}
+                                        actionType="liked"
                                         show={showPopover.like}
                                         onShow={() => handleShowPopover('like')}
                                         onHide={() => handleHidePopover('like')}
@@ -56,8 +58,10 @@ function Cards(props) {
                                         </Button>}
                                     />
                                     <AddCommentPopover
+                                    
                                         songId={data.id}
-                                        actionType="add"
+                                        data={data}
+                                        actionType="playlist"
                                         show={showPopover.add}
                                         onShow={() => handleShowPopover('add')}
                                         onHide={() => handleHidePopover('add')}

@@ -1,47 +1,35 @@
-
 import "./Library.css";
 import "../cardLIst/cardlist.css";
 import { useState, useRef, useEffect } from "react";
 import CardList from "../cardLIst/cardList.js";
+import axios from "axios";
 
 function Library() {
-    const music = require('../Data/musicData.json');
-   
+    // استخدام useState بشكل صحيح
+    const [playLists, setPlayLists] = useState({});
 
-    // Get Music from Table Liked
-    // function getLiked() {
-    //     const getUrl = ``;
-    //     axios.get(getUrl)
-    //         .then((response) => {
-    //             setLiked(response.data);
-    //         })
-    //         .catch(err => {
-    //             console.log(err);
-    //         })
-    // }
-    // Get Music from Table PlayList 
-    // function getPlaylist() {
-    //     const getUrl = ``;
-    //     axios.get(getUrl)
-    //         .then((response) => {
-    //             setPlaylist(response.data);
-    //         })
-    //         .catch(err => {
-    //             console.log(err);
-    //         })
-    // }
+    function getLiked() {
+        const getUrl = `https://back-end-10.onrender.com/favorite`;
+        axios.get(getUrl)
+            .then((response) => {
+                const data = response.data;
+                setPlayLists(data);
+                console.log(playLists);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
 
-    // useEffect(() => {
-    //     getLiked();
-    //     getPlaylist();
-    // })
+    useEffect(() => {
+        getLiked();
+    }, []);
 
     return (
         <>
-             <CardList data={music}  location="lybrari"/>
+             <CardList data={playLists} location="library"/>
         </>
     );
 }
 
 export default Library;
-
