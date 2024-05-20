@@ -15,7 +15,7 @@ function $Modal(props) {
                 <BootstrapModal.Title>playlist</BootstrapModal.Title>
             </BootstrapModal.Header>
             <BootstrapModal.Body>
-                <SoundPlayer sound={props.music.audio} />
+                <SoundPlayer sound={props.music.audio} data={props.music} />
             </BootstrapModal.Body>
             <BootstrapModal.Footer>
                 <Button variant="secondary" onClick={props.handleCloseModal}>Close</Button>

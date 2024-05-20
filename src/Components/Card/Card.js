@@ -1,4 +1,4 @@
-// src/Components/Card/Card.js
+
 import React, { useState } from 'react';
 import { Card as BootstrapCard, Button, Col, Form } from 'react-bootstrap';
 import AddCommentPopover from '../Popover/AddCommentPopover';
@@ -23,10 +23,14 @@ function Cards(props) {
         setShowPopover((prevState) => ({ ...prevState, [type]: false }));
 
     };
-
+    
     const handleShowPopover = (type) => {
-        setShowPopover((prevState) => ({ ...prevState, [type]: true }));
+  
+        Object.keys(showPopover).forEach(key => {
+            setShowPopover(prevState => ({ ...prevState, [key]: key === type }));
+        });
     };
+
 
     const handleDelete = () => {
         const url = `https://back-end-10.onrender.com/DELETE`;
@@ -62,7 +66,6 @@ function Cards(props) {
             console.log(error);
         })
     }
-
 
     return (
         <>
