@@ -6,7 +6,7 @@ import $Modal from '../Modal/Modal';
 import PropTypes from 'prop-types';
 import './Card.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPlus, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faPlus, faHeart ,faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function Cards(props) {
     const data = props.data;
@@ -40,10 +40,15 @@ function Cards(props) {
                         </BootstrapCard.Text>
                         <div className="mt-auto d-flex justify-content-between">
                             {props.location === 'library' ? (
-                                <>
-                                    <Button variant="primary" className="mr-1 flex-grow-1" onClick={handleShowModal}>Play</Button>
-                                    <Button variant="danger" className="ml-1 flex-grow-1" onClick={props.deleteSong}>Delete</Button>
-                                </>
+                            <>
+                            <Button variant="primary" className="mr-1 flex-grow-1 mr-2 btn-sm" onClick={handleShowModal}>
+                                <FontAwesomeIcon icon={faPlay} />
+                            </Button>
+                            <Button variant="danger" className="ml-1 flex-grow-1 mr-2 btn-sm" onClick={props.deleteSong}>
+                                <FontAwesomeIcon icon={faTrash} />
+                            </Button>
+                        </>
+                        
                             ) : (
                                 <>
                                     <AddCommentPopover

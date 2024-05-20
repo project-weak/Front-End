@@ -29,8 +29,8 @@ function CardList(props) {
                     <h2 className='section-title'>{section.title}</h2>
                     <div className="slider-container">
                         <Slider {...section.sliderSettings} afterChange={(current) => handleAfterChange(sectionIndex, current)}>
-                            {section.songs.map((song, index) => (
-                                <div key={index}>
+                            {section.songs.map((song) => (
+                                <div key={song.id}>
                                     <Cards data={song} location={location} />
                                 </div>
                             ))}
