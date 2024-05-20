@@ -25,6 +25,10 @@ function Cards(props) {
         setShowPopover((prevState) => ({ ...prevState, [type]: true }));
     };
 
+    const handleDelete = () =>{ 
+
+    }
+
     return (
         <>
             <Col>
@@ -41,7 +45,7 @@ function Cards(props) {
                             {props.location === 'library' ? (
                                 <>
                                     <Button variant="primary" className="mr-1 flex-grow-1" onClick={handleShowModal}>Play</Button>
-                                    <Button variant="danger" className="ml-1 flex-grow-1" onClick={props.deleteSong}>Delete</Button>
+                                    <Button variant="danger" className="ml-1 flex-grow-1" onClick={handleDelete}>Delete</Button>
                                 </>
                             ) : (
                                 <>
