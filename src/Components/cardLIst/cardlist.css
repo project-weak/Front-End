@@ -31,3 +31,9 @@ body{ background-color: hsl(0, 0%, 3%);}
 }
 
 
+.slide-number {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #aaa7a7;
+}

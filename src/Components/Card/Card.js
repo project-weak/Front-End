@@ -1,12 +1,12 @@
 // src/Components/Card/Card.js
 import React, { useState } from 'react';
 import { Card as BootstrapCard, Button, Col } from 'react-bootstrap';
-import AddCommentPopover from '../Popover/AddCommentPopover'; // استيراد AddCommentPopover
+import AddCommentPopover from '../Popover/AddCommentPopover'; 
 import $Modal from '../Modal/Modal';
 import PropTypes from 'prop-types';
 import './Card.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPlus, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faPlus, faHeart ,faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function Cards(props) {
     const data = props.data;
@@ -19,6 +19,7 @@ function Cards(props) {
 
     const handleHidePopover = (type) => {
         setShowPopover((prevState) => ({ ...prevState, [type]: false }));
+        
     };
 
     const handleShowPopover = (type) => {
@@ -43,15 +44,21 @@ function Cards(props) {
                         </BootstrapCard.Text>
                         <div className="mt-auto d-flex justify-content-between">
                             {props.location === 'library' ? (
-                                <>
-                                    <Button variant="primary" className="mr-1 flex-grow-1" onClick={handleShowModal}>Play</Button>
-                                    <Button variant="danger" className="ml-1 flex-grow-1" onClick={handleDelete}>Delete</Button>
-                                </>
+                            <>
+                            <Button variant="primary" className="mr-1 flex-grow-1 mr-2 btn-sm" onClick={handleShowModal}>
+                                <FontAwesomeIcon icon={faPlay} />
+                            </Button>
+                            <Button variant="danger" className="ml-1 flex-grow-1 mr-2 btn-sm" onClick={props.deleteSong}>
+                                <FontAwesomeIcon icon={faTrash} />
+                            </Button>
+                        </>
+                        
                             ) : (
                                 <>
                                     <AddCommentPopover
                                         songId={data.id}
-                                        actionType="like"
+                                        data={data}
+                                        actionType="liked"
                                         show={showPopover.like}
                                         onShow={() => handleShowPopover('like')}
                                         onHide={() => handleHidePopover('like')}
@@ -60,8 +67,10 @@ function Cards(props) {
                                         </Button>}
                                     />
                                     <AddCommentPopover
+                                    
                                         songId={data.id}
-                                        actionType="add"
+                                        data={data}
+                                        actionType="playlist"
                                         show={showPopover.add}
                                         onShow={() => handleShowPopover('add')}
                                         onHide={() => handleHidePopover('add')}
