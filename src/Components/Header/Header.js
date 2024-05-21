@@ -19,18 +19,7 @@ function Header(){
         <Nav.Link className='link' as={Link} to="/about">About Us</Nav.Link>
       </Nav.Item>
       
-      <Form inline className="ml-auto">
-          <FormControl
-            type="search"
-            placeholder="Search"
-            // className="mr-sm-2"
-            aria-label="Search"
-            // onChange={}
-          />
-          <Button variant="outline-success">Search</Button>
-        </Form>
-       
-      {/* <Search /> */}
+
     </Nav>
     </>
   );

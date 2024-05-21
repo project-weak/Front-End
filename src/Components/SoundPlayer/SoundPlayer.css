@@ -1,0 +1,42 @@
+/* في ملف SoundPlayer.css */
+
+.sound-player {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+}
+
+.sound-player img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+.sound-player iframe {
+    display: block;
+    border-radius: 6px;
+    border: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+.sound-player a {
+    text-align: center;
+    display: block;
+    color: #A4ABB6;
+    font-size: 12px;
+    font-family: sans-serif;
+    line-height: 16px;
+    margin-top: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
