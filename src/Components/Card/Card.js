@@ -1,5 +1,4 @@
-// src/Components/Card/Card.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card as BootstrapCard, Button, Col, Form } from 'react-bootstrap';
 import AddCommentPopover from '../Popover/AddCommentPopover';
 import $Modal from '../Modal/Modal';
@@ -8,6 +7,8 @@ import './Card.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPlus, faHeart, faTrash } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Cards(props) {
     const data = props.data;
@@ -63,12 +64,15 @@ function Cards(props) {
         })
     }
 
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+    })
 
     return (
         <>
-
-            <Col>
+            <Col data-aos="zoom-in">
                 <BootstrapCard className="custom-card h-100">
+
                     <BootstrapCard.Img className="custom-card-img" variant="top" src={data.url_image} />
                     <BootstrapCard.Body className='d-flex flex-column'>
                         <BootstrapCard.Text className="custom-card-title">

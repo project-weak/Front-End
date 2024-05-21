@@ -1,6 +1,5 @@
 import './App.css';
 import Home from './Components/Home/Home';
-import Header from './Components/Header/Header';
 import About from './Components/About/About';
 import Library from './Components/your_library/Library'
 import Search from './Components/Search/search';
@@ -13,7 +12,7 @@ import Footer from './Components/Footer/Footer';
 function App() {
   return (
   <>
-  <Header />
+
   <Routes>
   <Route path="/" element={<Home />} />
   <Route path="/search" element={<SearchResult />} />
