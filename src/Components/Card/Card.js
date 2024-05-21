@@ -7,6 +7,25 @@ import PropTypes from 'prop-types';
 import './Card.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPlus, faHeart ,faTrash } from '@fortawesome/free-solid-svg-icons';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// import { toast } from 'react-toastify';
+
+
+    const handleSaveClick = () => {
+        toast.success('Song saved!', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,  
+          progress: undefined,
+          theme: "light",
+        });
+  };
+
 
 function Cards(props) {
     const data = props.data;
@@ -17,13 +36,15 @@ function Cards(props) {
     const handleCloseModal = () => setShowModal(false);
     const handleShowModal = () => setShowModal(true);
 
-    const handleHidePopover = (type) => {
-        setShowPopover((prevState) => ({ ...prevState, [type]: false }));
-        
-    };
+    const handleHidePopover = (type, songId) => {
+  setShowPopover((prevState) => ({ ...prevState, [type]: false }));
+  
+};
 
     const handleShowPopover = (type) => {
-        setShowPopover((prevState) => ({ ...prevState, [type]: true }));
+        setShowPopover((prevState) => ({ ...prevState, [type]: true  }));
+       
+       
     };
 
     return (
@@ -57,7 +78,7 @@ function Cards(props) {
                                         actionType="liked"
                                         show={showPopover.like}
                                         onShow={() => handleShowPopover('like')}
-                                        onHide={() => handleHidePopover('like')}
+                                        onHide={() => handleHidePopover('like',data.id)}
                                         triggerElement={<Button variant="success" className="mx-1 flex-grow-1 custom-button" onClick={() => handleShowPopover('like')}>
                                             <FontAwesomeIcon icon={faHeart} />
                                         </Button>}
@@ -69,7 +90,7 @@ function Cards(props) {
                                         actionType="playlist"
                                         show={showPopover.add}
                                         onShow={() => handleShowPopover('add')}
-                                        onHide={() => handleHidePopover('add')}
+                                        onHide={() => handleHidePopover('add',data.id)}
                                         triggerElement={<Button variant="warning" className="mx-1 flex-grow-1 custom-button" onClick={() => handleShowPopover('add')}>
                                             <FontAwesomeIcon icon={faPlus} />
                                         </Button>}
@@ -102,3 +123,6 @@ Cards.propTypes = {
 };
 
 export default Cards;
+
+
+  

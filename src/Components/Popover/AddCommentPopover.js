@@ -5,7 +5,22 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 import './AddCommentPopover.css';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+const handleSaveClick = () => {
+    toast.success('Song saved!', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
+  
 function AddCommentPopover({ songId, actionType, triggerElement, show, onShow, onHide,data }) {
     const [comment, setComment] = useState('');
 
@@ -41,7 +56,10 @@ function AddCommentPopover({ songId, actionType, triggerElement, show, onShow, o
             .then(response => {
                 console.log('Comment saved successfully');
                 onHide(); 
+                handleSaveClick();
             })
+           
+               
             .catch(error => {
                 console.error('There was an error saving the comment!', error);
             });
