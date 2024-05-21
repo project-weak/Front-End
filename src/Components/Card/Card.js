@@ -5,10 +5,32 @@ import $Modal from '../Modal/Modal';
 import PropTypes from 'prop-types';
 import './Card.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPlus, faHeart ,faTrash } from '@fortawesome/free-solid-svg-icons';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// import { toast } from 'react-toastify';
+
+
+    const handleSaveClick = () => {
+        toast.success('Song saved!', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,  
+          progress: undefined,
+          theme: "light",
+        });
+  };
+
+
 import { faPlay, faPlus, faHeart, faTrash } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
 
 function Cards(props) {
     const data = props.data;
@@ -19,6 +41,15 @@ function Cards(props) {
     const handleCloseModal = () => setShowModal(false);
     const handleShowModal = () => setShowModal(true);
 
+    const handleHidePopover = (type, songId) => {
+  setShowPopover((prevState) => ({ ...prevState, [type]: false }));
+  
+};
+
+    const handleShowPopover = (type) => {
+        setShowPopover((prevState) => ({ ...prevState, [type]: true  }));
+       
+       
     const handleHidePopover = (type) => {
         setShowPopover((prevState) => ({ ...prevState, [type]: false }));
     };
@@ -110,6 +141,49 @@ function Cards(props) {
                             </>
                         ) : (
                             <>
+
+                            <Button variant="primary" className="mr-1 flex-grow-1 mr-2 btn-sm" onClick={handleShowModal}>
+                                <FontAwesomeIcon icon={faPlay} />
+                            </Button>
+                            <Button variant="danger" className="ml-1 flex-grow-1 mr-2 btn-sm" onClick={props.deleteSong}>
+                                <FontAwesomeIcon icon={faTrash} />
+                            </Button>
+                        </>
+                        
+                            ) : (
+                                <>
+                                    <AddCommentPopover
+                                        songId={data.id}
+                                        data={data}
+                                        actionType="liked"
+                                        show={showPopover.like}
+                                        onShow={() => handleShowPopover('like')}
+                                        onHide={() => handleHidePopover('like',data.id)}
+                                        triggerElement={<Button variant="success" className="mx-1 flex-grow-1 custom-button" onClick={() => handleShowPopover('like')}>
+                                            <FontAwesomeIcon icon={faHeart} />
+                                        </Button>}
+                                    />
+                                    <AddCommentPopover
+                                    
+                                        songId={data.id}
+                                        data={data}
+                                        actionType="playlist"
+                                        show={showPopover.add}
+                                        onShow={() => handleShowPopover('add')}
+                                        onHide={() => handleHidePopover('add',data.id)}
+                                        triggerElement={<Button variant="warning" className="mx-1 flex-grow-1 custom-button" onClick={() => handleShowPopover('add')}>
+                                            <FontAwesomeIcon icon={faPlus} />
+                                        </Button>}
+                                    />
+                                    <Button variant="primary" className="ml-1 flex-grow-1 custom-button" onClick={handleShowModal}>
+                                        <FontAwesomeIcon icon={faPlay} />
+                                    </Button>
+                                </>
+                            )}
+                        </div>
+                    </BootstrapCard.Body>
+                </BootstrapCard>
+            </Col>
                                 <AddCommentPopover
                                     songId={data.id}
                                     data={data}
@@ -160,3 +234,6 @@ Cards.propTypes = {
 };
 
 export default Cards;
+
+
+  
