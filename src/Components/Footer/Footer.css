@@ -1,6 +1,7 @@
 .textCenterArea{
     color: white;
-    background-color:rgb(78, 127, 192);
+    background: linear-gradient(to bottom, #222831, #393e46);
+
     text-align: center;
 } 
 .logo{

@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 // This import is for BootStrap NavBar
 import Nav from 'react-bootstrap/Nav';
 import '../Header/Header.css'
+// import Button from 'react-bootstrap/Button';
 
-
-
+import { Navbar, Form, FormControl, Button } from 'react-bootstrap'
 
 function Header(){
   return (<>
@@ -18,6 +18,8 @@ function Header(){
       <Nav.Item>
         <Nav.Link className='link' as={Link} to="/about">About Us</Nav.Link>
       </Nav.Item>
+      
+
     </Nav>
     </>
   );

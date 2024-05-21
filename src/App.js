@@ -3,7 +3,8 @@ import Home from './Components/Home/Home';
 import Header from './Components/Header/Header';
 import About from './Components/About/About';
 import Library from './Components/your_library/Library'
-
+import Search from './Components/Search/search';
+import SearchResult from './Components/Search/SearchResult/SearchResult';
 
 
 import { Routes, Route } from 'react-router-dom';
@@ -15,13 +16,16 @@ function App() {
   <Header />
   <Routes>
   <Route path="/" element={<Home />} />
+  <Route path="/search" element={<SearchResult />} />
   <Route path="/about" element={<About />} />
   <Route path="/Library" element={<Library />} />
   </Routes>
   <Footer/>
 
   </>
+
   );
 }
 
 export default App;
+
