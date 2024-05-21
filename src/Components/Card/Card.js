@@ -24,10 +24,14 @@ function Cards(props) {
         setShowPopover((prevState) => ({ ...prevState, [type]: false }));
 
     };
-
+    
     const handleShowPopover = (type) => {
-        setShowPopover((prevState) => ({ ...prevState, [type]: true }));
+  
+        Object.keys(showPopover).forEach(key => {
+            setShowPopover(prevState => ({ ...prevState, [key]: key === type }));
+        });
     };
+
 
     const handleDelete = () => {
         const url = `https://back-end-10.onrender.com/DELETE`;
