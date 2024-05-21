@@ -1,13 +1,15 @@
-import { useState, useEffect } from 'react';
-import CardList from '../cardLIst/cardList'
-import './Home.css'
+import React, { useState, useEffect } from 'react';
+import CardList from '../cardLIst/cardList';
+import './Home.css';
 import axios from 'axios';
+import Slider from '../Slider/SliderHome.js';
 
-const Home = () => {
+
+function Home() {
   const [music, setMusic] = useState([]);
 
   const getMusicData = () => {
-    const url = `https://back-end-10.onrender.com/`;
+    const url = `http://localhost:3005/`;
     axios.get(url)
       .then((response) => {
         console.log(response.data);
@@ -15,16 +17,16 @@ const Home = () => {
       }).catch((error) => {
         console.log(error);
       });
-  }
+  };
 
-  
-  useEffect(() => getMusicData(), []);
-
+  useEffect(() => {
+    getMusicData();
+  }, []);
 
   return (
     <>
+     <Slider/>
       <CardList data={music} location="home" />
-
     </>
   );
 }
