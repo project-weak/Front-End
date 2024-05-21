@@ -3,6 +3,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import '../Footer/Footer.css';
 
+
+import facebookImg from '../assets/icons/facebook.png';
+
 function Footer() {
   return (
     <>
@@ -20,9 +23,6 @@ function Footer() {
       <Nav.Item>
         <Nav.Link className='link'  as={Link} to="/about">About</Nav.Link>
       </Nav.Item>
-      <img className='facebook' src='/home/yazan/Front-End/src/Components/img/facebook.png' alt=''/>
-      <img className='twitter' src='' alt=''/>
-      <img className='instagram' src='' alt=''/>
     </Nav>
     
     <hr className='line'/>
