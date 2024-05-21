@@ -1,8 +1,15 @@
 /* .backgroundColorNavBar {
     background-color: rgb(78, 127, 192);
-    width: 100%;
+.backgroundColorNavBar {
+    /* background-color: #222831;
+     */
+
+.link{
+    color:white !important;
+    text-align: center;
     height: 70px;
     min-height: 70px;
+
 
 }
 

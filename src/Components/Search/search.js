@@ -23,8 +23,12 @@ function Search() {
     getMusicData();
   }, []);
 
-  const handleInputChange = (event) => {
-    setQuery(event.target.value);
+  const handleInputChange = (e) => {
+    const value = e.target.value.toLowerCase(); // Get the value directly from the input element and convert to lowercase
+    const filterItems = props.music.filter((item) => {
+      return item.title.toLowerCase().includes(value);
+    });
+    setFilteredMusic(filterItems); // Update the filtered music state
   };
 
   const handleKeyDown = (event) => {
