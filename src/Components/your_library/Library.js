@@ -3,9 +3,10 @@ import "../cardLIst/cardlist.css";
 import { useState, useRef, useEffect } from "react";
 import CardList from "../cardLIst/cardList.js";
 import axios from "axios";
+import Header from '../Header/Header';
 
 function Library() {
-    // استخدام useState بشكل صحيح
+
     const [playLists, setPlayLists] = useState({});
 
     function getLiked() {
@@ -27,7 +28,8 @@ function Library() {
 
     return (
         <>
-             <CardList data={playLists} location="library"/>
+            <Header />
+            <CardList data={playLists} location="library" />
         </>
     );
 }

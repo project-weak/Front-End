@@ -67,3 +67,16 @@
   .footer-col form button[type="submit"]:hover {
     background-color: #ccc;
   }
+.textCenterArea{
+    color: white;
+    background: linear-gradient(to bottom, #222831, #393e46);
+
+    text-align: center;
+} 
+.logo{
+    color: white !important;
+}
+.line{
+    padding: 1rem;
+    margin:0% 5%;
+}

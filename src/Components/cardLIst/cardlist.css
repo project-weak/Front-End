@@ -1,4 +1,8 @@
-body{ background-color: hsl(0, 0%, 3%);}
+body {
+    background-color: hsl(0, 0%, 3%);
+    height: 100%;
+}
+
 .cardlist-container {
     padding: 20px;
     background-color: hsl(0, 0%, 9%);
@@ -6,6 +10,12 @@ body{ background-color: hsl(0, 0%, 3%);}
     border-radius: 3px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
+
+.slider-class {
+    height: 355px;
+}
+
+
 .section {
 
     margin-left: 7px;
@@ -20,13 +30,14 @@ body{ background-color: hsl(0, 0%, 3%);}
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-.slider-container{
-    
-        padding: 20px;
-        background-color: hsl(0, 0%, 5%);
-        border: 1px solid hsl(0, 2%, 11%);
-        border-radius: 5px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+
+.slider-container {
+
+    padding: 20px;
+    background-color: hsl(0, 0%, 5%);
+    border: 1px solid hsl(0, 2%, 11%);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 
 }
 
