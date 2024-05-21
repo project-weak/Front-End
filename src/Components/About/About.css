@@ -1,0 +1,52 @@
+.Container{
+    display: grid !important;
+    gap: 1rem !important;
+  }
+  .groupCards{
+    display: flex !important;
+    gap: 25px !important;
+  }
+.card{
+    border: none !important;
+  }
+.TitleCard{
+    color: skyblue !important;
+    text-align: center;
+}
+.subtile{
+    text-align: center;
+}
+.textCard{
+    text-align: center;
+}
+.teamHeader, .subtext{
+    text-align: center;
+    margin: 0%;
+    
+}
+.imageSize{
+    border-radius: 50% !important;
+    margin-top: 10% !important;
+    border-color: black  !important;
+    border-style: solid;
+    border-width: 1px;
+}
+.teamHeader{
+    color: skyblue;
+}
+.TeamHeaderMain{
+    text-align: center;
+}
+.subtextMain{
+    text-align: center;
+}
+.mainBackground{
+    height: 100%;
+    background-image:url(../assets/icons/backgroundImage.webp)
+}
+.button{
+    margin-left: 45%;
+    height: 25% !important;
+    width: 25% !important;
+    align-self:  center;
+}
