@@ -72,7 +72,7 @@ function Cards(props) {
 
     return (
         <>
-            <Col data-aos="zoom-in">
+            <Col>
                 <BootstrapCard className="custom-card h-100">
 
                     <BootstrapCard.Img className="custom-card-img" variant="top" src={data.url_image} />
