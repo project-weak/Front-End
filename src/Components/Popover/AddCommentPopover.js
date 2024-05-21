@@ -21,7 +21,6 @@ const handleSaveClick = () => {
     });
   };
   
-function AddCommentPopover({ songId, actionType, triggerElement, show, onShow, onHide,data }) {
 function AddCommentPopover({ songId, actionType, triggerElement, show, onShow, onHide, data }) {
 
     const [comment, setComment] = useState('');
