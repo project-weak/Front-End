@@ -1,4 +1,4 @@
-import Search from '../Search/search';import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import CardList from '../cardLIst/cardList'
 import './Home.css'
 import axios from 'axios';
@@ -6,14 +6,14 @@ import axios from 'axios';
 
 //const musicData=require('../Data/musicData.json');
 const Home = () => {
-    const [music, setMusic] = useState([]);
+    const [music, setMusic] = useState({});
 
     
     const getMusicData = () => {
         const url = `https://back-end-10.onrender.com/`;
         axios.get(url)
             .then((response) => {
-             console.log(response.data)
+             console.log(response.data.top)
                 setMusic(response.data);
             }).catch((error) => {
                 console.log(error);
@@ -25,8 +25,9 @@ const Home = () => {
 
   return (
     <>
-    
+    {console.log(music)}
    <CardList data={music}  location="home"/> 
+    {/* <Search data={music}  location="home"/>   */}
    </>
   );
 }

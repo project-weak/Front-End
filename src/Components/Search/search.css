@@ -1,4 +1,4 @@
-.search-container {
+/* .search-container {
   display: flex;
   align-items: center;
 }
@@ -10,14 +10,73 @@
   border-radius: 25px; 
   outline: none; 
   font-size: 16px; 
-  transition: border-color 0.3s; /* Smooth transition for border color */
-  background-color: white;
+  transition: border-color 0.3s; 
+  background-color: #07182E;
   color: black;
   position: absolute;
   margin-top: 15px;
   margin-right: auto;
   right:40px;
 }
+   */
+
+
+   .input-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 30px;
+    margin-top: 20px;
+    max-width: 20%;
+  }
+  
+  .input {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding: 18px 16px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    margin-left: 5px;
+  }
+  
+  .input::placeholder {
+    color: transparent;
+  }
+  
+  .input:focus::placeholder {
+    color: rgb(131, 128, 128);
+  }
+  
+  .input:focus,.input:not(:placeholder-shown) {
+    background-color: rgb(17, 17, 17);
+    border: 1px solid rgb(10, 10, 10);
+    width: 290px;
+    cursor: none;
+    padding: 18px 16px 18px 45px;
+  }
+  
+  .icon {
+    position: absolute;
+    right: 20;
+    height: 45px;
+    width: 45px;
+    background-color: #fff;
+    border-radius: 99px;
+    z-index: -1;
+    fill: rgb(19, 22, 50);
+    border: 1px solid rgb(10, 10, 11);
+  }
+  
+  .input:focus + .icon,.input:not(:placeholder-shown) + .icon {
+    z-index: 0;
+    background-color: transparent;
+    border: none;
+  }
 
 
 

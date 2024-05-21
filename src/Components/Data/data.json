@@ -1,0 +1,25 @@
+{
+  "papulor": [
+    {
+      "id": "1",
+      "music_name": "Balrog Boogie",
+      "singer_name": "Diablo Swing Orchestra",
+      "url_image": "https://usercontent.jamendo.com?type=album&id=49216&width=300&trackid=391002",
+      "audio": "https://prod-1.storage.jamendo.com/?trackid=391002&format=mp31&from=K2GLQltYaVkmH%2Bp%2Fm1eF%2BQ%3D%3D%7CxIs98WZfYI22KHZVuw5JcA%3D%3D"
+    },
+    {
+      "id": "2",
+      "music_name": "Only God Knows Why",
+      "singer_name": "Nocreeps",
+      "url_image": "https://usercontent.jamendo.com?type=album&id=34802&width=300&trackid=238862",
+      "audio": "https://prod-1.storage.jamendo.com/?trackid=238862&format=mp31&from=QtIQ54vqpL7Q0JXND3HNzw%3D%3D%7CMBWFy220f2diQvlnahrHQw%3D%3D"
+    },
+    {
+      "id": "3",
+      "music_name": "Yellow Gold",
+      "singer_name": "John Dada & the Weathermen",
+      "url_image": "https://usercontent.jamendo.com?type=album&id=46816&width=300&trackid=353341",
+      "audio": "https://prod-1.storage.jamendo.com/?trackid=353341&format=mp31&from=FWbg9TkwY2qdzEtvgyfFMg%3D%3D%7CVSgvmGVrCsiffaH0PDjD2Q%3D%3D"
+    }
+  ]
+}

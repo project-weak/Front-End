@@ -19,6 +19,7 @@ function App() {
   <Route path="/search" element={<SearchResult />} />
   <Route path="/about" element={<About />} />
   <Route path="/Library" element={<Library />} />
+  <Route path="/results" component={SearchResult} />
   </Routes>
   <Footer/>
 

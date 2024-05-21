@@ -1,0 +1,17 @@
+/*About.css*/
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 43px; /* Adjust the gap between cards as needed */
+  justify-content: center; /* Center the cards horizontally */
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.about-container > * {
+  flex: 1 1 calc(33.333% - 40px); /* Adjust this value as needed to fit your layout */
+  box-sizing: border-box;
+  max-width: 500px; /* Adjust this value as needed */
+}
+
+
