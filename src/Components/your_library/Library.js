@@ -6,8 +6,8 @@ import axios from "axios";
 import NavBar from '../NavBar/NavBar.js';
 
 function Library() {
-
     const [playLists, setPlayLists] = useState({});
+
     const handleDeleteData=(id)=>{
         const Liked =playLists.Liked.filter(item => item.id !== id);
     const Playlist = playLists.Playlist.filter(item => item.id !== id);
@@ -34,7 +34,7 @@ function Library() {
     return (
         <>
             <NavBar />
-            <CardList data={playLists} location="library" />
+            <CardList data={playLists} location="library" handleDelete={handleDeleteData}/>
         </>
     );
 }
