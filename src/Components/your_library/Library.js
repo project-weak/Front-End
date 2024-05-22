@@ -3,7 +3,7 @@ import "../cardLIst/cardlist.css";
 import { useState, useRef, useEffect } from "react";
 import CardList from "../cardLIst/cardList.js";
 import axios from "axios";
-import Header from '../Header/Header';
+import NavBar from '../NavBar/NavBar.js';
 
 function Library() {
 
@@ -28,7 +28,7 @@ function Library() {
 
     return (
         <>
-            <Header />
+            <NavBar />
             <CardList data={playLists} location="library" />
         </>
     );

@@ -8,7 +8,7 @@ body {
     overflow-x: hidden;
 }
 
-header {
+.home-header {
     height: 60px;
     width: 100%;
     position: absolute;

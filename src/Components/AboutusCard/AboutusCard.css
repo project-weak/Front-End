@@ -1,6 +1,6 @@
 /*AboutusCard*/
 .aboutuscard {
-  width: 40%;
+  width: 400px;
   height: fit-content;
   background: #07182E;
   position: relative;
@@ -9,14 +9,19 @@
   place-items: center;
   overflow: hidden;
   border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 
 .user-image {
+
   margin-top: 20px;
   margin-bottom: 20px;
   z-index: 1;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  /* height: 150px; */
   border-radius: 50%;
 }
 
