@@ -20,9 +20,9 @@ function SilderHome() {
             <header>
                 <div id="logo">Melody<span id="logo-s">Hub</span></div>
 
-                <span class="home"><Link class="act" to="/about">About Us</Link></span>
-                <span class="home"><Link class="act" to="/Library">Library</Link></span>
-                <span class="home"><Link class="act" to="/">Home</Link></span>
+                <span className="home"><Link className="act" to="/about">About Us</Link></span>
+                <span className="home"><Link className="act" to="/Library">Library</Link></span>
+                <span className="home"><Link className="act" to="/">Home</Link></span>
             </header>
             <Slider {...settings} className="heroslider">
                 <div className="slideritem slideritem-01 mt0">

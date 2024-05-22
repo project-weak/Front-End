@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Popover, OverlayTrigger, Button, Form } from 'react-bootstrap';
 import axios from 'axios';
@@ -6,39 +5,40 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 import './AddCommentPopover.css';
 
-function AddCommentPopover({ songId, actionType, triggerElement, show, onShow, onHide, data }) {
-    const [comment, setComment] = useState('');
+function AddCommentPopover({ songId, actionType, triggerElement, show, onShow, onHide, data, editMode, initialComment, saveComment }) {
+    const [comment, setComment] = useState(initialComment || '');
 
     useEffect(() => {
-        if (show) {
-            onShow();
+        if (show && editMode) {
+            setComment(initialComment || '');
         }
-    }, [show, onShow]);
+    }, [show, initialComment, editMode]);
 
     const handleChange = (event) => {
         setComment(event.target.value);
     };
 
     const handleSubmit = () => {
-       
-      
-
-        axios.post('https://back-end-10.onrender.com/addMusic', {
-            music_name: data.music_name,
-            singer_name: data.singer_name,
-            url_image: data.url_image,
-            audio: data.audio,
-            comment: comment,
-            table: actionType
-        })
-            .then(response => {
-                console.log('Comment saved successfully');
-                onHide();
+        if (editMode) {
+            saveComment(comment);
+            onHide();
+        } else {
+            axios.post('https://back-end-10.onrender.com/addMusic', {
+                music_name: data.music_name,
+                singer_name: data.singer_name,
+                url_image: data.url_image,
+                audio: data.audio,
+                comment: comment,
+                table: actionType
             })
-            .catch(error => {
-                console.error('There was an error saving the comment!', error);
-            });
-
+                .then(response => {
+                    console.log('Comment saved successfully');
+                    onHide();
+                })
+                .catch(error => {
+                    console.error('There was an error saving the comment!', error);
+                });
+        }
         setComment('');
     };
 
@@ -48,7 +48,9 @@ function AddCommentPopover({ songId, actionType, triggerElement, show, onShow, o
 
     const popover = (
         <Popover id="popover-basic">
-            <Popover.Header as="h3"><FontAwesomeIcon icon={faCommentDots} /> Add Comment</Popover.Header>
+            <Popover.Header as="h3">
+                <FontAwesomeIcon icon={faCommentDots} /> {editMode ? 'Edit Comment' : 'Add Comment'}
+            </Popover.Header>
             <Popover.Body>
                 <Form>
                     <Form.Group controlId="formComment">
@@ -75,7 +77,7 @@ function AddCommentPopover({ songId, actionType, triggerElement, show, onShow, o
 
     return (
         <OverlayTrigger trigger="click" placement="right" overlay={popover} show={show} onToggle={onHide}>
-            {triggerElement}
+            {triggerElement || <div></div>}
         </OverlayTrigger>
     );
 }

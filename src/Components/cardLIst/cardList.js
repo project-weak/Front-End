@@ -25,13 +25,13 @@ function CardList(props) {
     return (
         <div className='cardlist-container'>
             {sections.map((section, sectionIndex) => (
-                <div key={sectionIndex} className='section'>
-                    <h2 className='section-title'>{section.title}</h2>
+                <div key={section.title} className='section'>
+                    <h2 className='section-title'>{section.title} Songs</h2>
                     <div className="slider-container">
                         <Slider className="slider-class" {...section.sliderSettings} afterChange={(current) => handleAfterChange(sectionIndex, current)}>
-                            {section.songs.map((song) => (
-                                <div key={song.id}>
-                                    <Cards data={song} location={location} filteredMusic={props.filteredMusic} />
+                            {section.songs.map((song,index) => (
+                                <div key={index}>
+                                    <Cards id={String(song.id)} data={song} location={location} filteredMusic={props.filteredMusic} handleDelete={props.handleDelete} />
                                 </div>
                             ))}
                         </Slider>
