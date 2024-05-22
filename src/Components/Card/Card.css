@@ -90,7 +90,7 @@
 .custom-card:hover {
     transform: scale(1.05);
 }
-/* CSS */
+
 .custom-button {
     transition: background-color 0.3s, color 0.3s;
 }
@@ -99,7 +99,6 @@
     background-color: hsl(45, 94%, 56%);
     color: #212529;
 }
-
 
 .custom-comment-section {
     margin-left: 2px;
@@ -116,7 +115,6 @@
 }
 
 .custom-card-comment {
-    
     font-size: 0.8rem;
     margin-bottom: 0.5rem;
     align-items: left; 

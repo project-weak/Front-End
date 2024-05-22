@@ -52,9 +52,6 @@ function Cards(props) {
         setEditMode(true);
         handleShowPopover('edit');
         setShowPopover((prevState) => ({ ...prevState, ["add"]: false }));
-        
-   
-
     };
 
     const saveUpdatedComment = (newComment) => {

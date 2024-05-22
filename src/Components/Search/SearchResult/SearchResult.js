@@ -6,7 +6,7 @@ import './SearchResult.css';
 //import $Modal from '/home/reem/Front-End/src/Components/Modal/Modal.js';
 import AddCommentPopover from '../../Popover/AddCommentPopover';
 
-// const jsonData = 
+// // const jsonData = 
 
 
 function SearchResult(props) {

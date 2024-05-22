@@ -116,13 +116,3 @@ function Search(props) {
 
 export default Search;
 
-
-
-
-
-/*
-this code capturing the user's search query,
- processing it to make it case-insensitive, splitting it into individual terms title and artist, 
- and then filtering a list of songs to find those that match all the search terms.
- The matching songs are then displayed to the user
-*/

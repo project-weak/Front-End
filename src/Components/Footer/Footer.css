@@ -1,8 +1,10 @@
-
+/* .in-about {
+  background-color: #163779;  
+} */
   .footer {
     display: flex;
     justify-content: space-between;
-    background-color: #333;
+     background-color: #163779; 
     color: #fff;
     padding: 2rem 0;
     
@@ -57,7 +59,7 @@
   
   .footer-col form button[type="submit"] {
     padding: 0.5rem;
-    background-color: #fff;
+    background-color: #ffffffa5;
     color: #333;
     border: none;
     border-radius: 0.25rem;
