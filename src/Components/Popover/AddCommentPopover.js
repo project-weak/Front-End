@@ -4,9 +4,12 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 import './AddCommentPopover.css';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function AddCommentPopover({ songId, actionType, triggerElement, show, onShow, onHide, data, editMode, initialComment, saveComment }) {
-    const [comment, setComment] = useState(initialComment || '');
+
+    const [comment, setComment] = useState('');
 
     useEffect(() => {
         if (show && editMode) {
@@ -21,6 +24,16 @@ function AddCommentPopover({ songId, actionType, triggerElement, show, onShow, o
     const handleSubmit = () => {
         if (editMode) {
             saveComment(comment);
+            toast.success('Comment updated successfully!', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
             onHide();
         } else {
             axios.post('https://back-end-10.onrender.com/addMusic', {
@@ -33,6 +46,16 @@ function AddCommentPopover({ songId, actionType, triggerElement, show, onShow, o
             })
                 .then(response => {
                     console.log('Comment saved successfully');
+                    toast.success('Comment saved successfully!', {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
                     onHide();
                 })
                 .catch(error => {
