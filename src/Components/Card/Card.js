@@ -142,7 +142,7 @@ function Cards(props) {
                                         <FontAwesomeIcon icon={faPlus} />
                                     </Button>}
                                 />
-                                <Button variant="primary" className="ml-1 flex-grow-1 custom-button" onClick={handleShowModal}>
+                                <Button variant="secondary" className="ml-1 flex-grow-1 custom-button" onClick={handleShowModal}>
                                     <FontAwesomeIcon icon={faPlay} />
                                 </Button>
                             </>
