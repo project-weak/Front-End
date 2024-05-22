@@ -20,7 +20,6 @@ function SilderHome() {
         <>
             <header className='home-header'>
                 <div id="logo">Melody<span id="logo-s">Hub</span></div>
-
                 <span className="home"><Link className="act" to="/about">About Us</Link></span>
                 <span className="home"><Link className="act" to="/Library">Library</Link></span>
                 <span className="home"><Link className="act" to="/">Home</Link></span>

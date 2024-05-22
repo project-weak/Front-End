@@ -35,7 +35,6 @@
 }
 
 .about-container {
-    /* display: grid !important;*/
     gap: 4rem !important;
     display: flex;
     flex-wrap: wrap;
@@ -65,7 +64,6 @@
 .subtext {
     text-align: center;
     margin: 0%;
-
 }
 
 .imageSize {

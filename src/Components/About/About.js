@@ -1,3 +1,4 @@
+import './About.css';
 import React from 'react';
 import AboutusCard from "../AboutusCard/AboutusCard";
 import reem from "../../images/reem.jpeg";
@@ -5,7 +6,6 @@ import fadi from "../../images/fadi.jpeg";
 import muath from "../../images/muath.jpeg";
 import yazan from "../../images/yazan.jpeg";
 import mohammed from "../../images/mohammed.jpeg";
-import './About.css';  // Import the CSS file
 import NavBar from '../NavBar/NavBar';
 
 function About() {
@@ -15,12 +15,12 @@ function About() {
       <section className='class-text'>
         <h1>About Melody Hub </h1>
         <p className='the-text'>
-        Melody Hub is a music streaming app that brings your favorite
-        songs and artists right to your fingertips. Discover new tracks
-        and enjoy high-quality audio anytime, anywhere. With an intuitive
-        interface and a load of music, Melody Hub is your go-to app for
-         an exceptional listening experience.
-         </p>
+          Melody Hub is a music streaming app that brings your favorite
+          songs and artists right to your fingertips. Discover new tracks
+          and enjoy high-quality audio anytime, anywhere. With an intuitive
+          interface and a load of music, Melody Hub is your go-to app for
+          an exceptional listening experience.
+        </p>
       </section>
       <section className='section-our'>
         Our Team Members
