@@ -8,6 +8,11 @@ import NavBar from '../NavBar/NavBar.js';
 function Library() {
 
     const [playLists, setPlayLists] = useState({});
+    const handleDeleteData=(id)=>{
+        const Liked =playLists.Liked.filter(item => item.id !== id);
+    const Playlist = playLists.Playlist.filter(item => item.id !== id);
+    setPlayLists({Liked ,Playlist})
+    }
 
     function getLiked() {
         const getUrl = `https://back-end-10.onrender.com/favorite`;
@@ -15,7 +20,7 @@ function Library() {
             .then((response) => {
                 const data = response.data;
                 setPlayLists(data);
-                console.log(playLists);
+                console.log(data);
             })
             .catch(err => {
                 console.log(err);

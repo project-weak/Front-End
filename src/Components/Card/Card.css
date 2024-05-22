@@ -99,3 +99,40 @@
     background-color: hsl(45, 94%, 56%);
     color: #212529;
 }
+
+
+.custom-comment-section {
+    margin-left: 2px;
+    width: 100%;
+    display: flex; 
+    justify-content: space-between;
+    align-items: left; 
+    background-color: hsl(208, 7%, 46%,0.3); 
+    color: #fff; 
+    padding: 2px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.custom-card-comment {
+    
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    align-items: left; 
+}
+
+.custom-card-update-button {
+   
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    font-size: 0.8rem; 
+    padding: 6px 12px; 
+    margin-right: 0%;
+}
+
+.custom-card-update-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
