@@ -1,23 +1,21 @@
 body {
-    background-color: hsl(0, 0%, 3%);
+    /* background-color: hsl(0, 0%, 3%); */
     height: 100%;
 }
 
 .cardlist-container {
     padding: 20px;
-    background-color: hsl(0, 0%, 9%);
+    /* background-color: hsl(0, 0%, 9%); */
     border: 2px solid #181717;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); */
 }
 
 .slider-class {
-    height: 355px;
+    height: 405px;
 }
 
-.section {
-    margin-left: 7px;
-    margin-right: 7px;
-    margin-bottom: 30px;
+.cardlist-container .section {
+    margin: 50px 7px 30px;
 }
 
 .section-title {

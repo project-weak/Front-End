@@ -70,14 +70,14 @@
 }
 
 .custom-card .btn-warning {
-    background-color: #FFD700 !important; 
-    border-color: #FFD700 !important;
+    background-color: #1E90FF !important; 
+    border-color: #1E90FF !important;
     color: #fff !important;
 }
 
 .custom-card .btn-warning:hover {
-    background-color: hsl(47, 94%, 40%) !important;
-    border-color: #FFC700 !important;
+    background-color: hsl(206, 94%, 40%) !important;
+    border-color: #2191ff !important;
 }
 .custom-card {
     transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
@@ -96,7 +96,7 @@
 }
 
 .custom-button:hover {
-    background-color: hsl(45, 94%, 56%);
+    /* background-color: hsl(45, 94%, 56%); */
     color: #212529;
 }
 
