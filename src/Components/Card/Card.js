@@ -1,21 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { Card as BootstrapCard, Button, Col, Form } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Card as BootstrapCard, Button, Col } from 'react-bootstrap';
 import AddCommentPopover from '../Popover/AddCommentPopover';
 import $Modal from '../Modal/Modal';
 import PropTypes from 'prop-types';
 import './Card.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPlus, faHeart, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faPlus, faHeart, faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 function Cards(props) {
     const data = props.data;
-    // console.log(data);
-    const [comment, setComment] = useState(data.comment || '')
+    const [comment, setComment] = useState(data.comment || ' ');
     const [showModal, setShowModal] = useState(false);
     const [showPopover, setShowPopover] = useState({});
+    const [editMode, setEditMode] = useState(false);
 
     const handleCloseModal = () => setShowModal(false);
     const handleShowModal = () => setShowModal(true);
@@ -23,17 +21,19 @@ function Cards(props) {
     const handleHidePopover = (type) => {
         setShowPopover((prevState) => ({ ...prevState, [type]: false }));
 
-    };
-    
-    const handleShowPopover = (type) => {
-  
-        Object.keys(showPopover).forEach(key => {
-            setShowPopover(prevState => ({ ...prevState, [key]: key === type }));
-        });
+            setShowPopover((prevState) => ({ ...prevState, ["add"]: false }));
+            setShowPopover((prevState) => ({ ...prevState, ["like"]: false }));
+                     setShowPopover((prevState) => ({ ...prevState, ["edit"]: false }));
+        
+        
     };
 
+    const handleShowPopover = (type) => {
+        setShowPopover((prevState) => ({ ...prevState, [type]: true }));
+    };
 
     const handleDelete = () => {
+        props.handleDelete(data.id);
         const url = `https://back-end-10.onrender.com/DELETE`;
 
         axios.delete(url, {
@@ -41,116 +41,120 @@ function Cards(props) {
                 id: data.id,
                 table: data.source_table
             }
-        }
-        ).then((result) => {
+        }).then((result) => {
             console.log(result);
-
         }).catch((error) => {
             console.log(error);
         });
-    }
+    };
 
+    const handleUpdate = () => {
+        setEditMode(true);
+        handleShowPopover('edit');
+        setShowPopover((prevState) => ({ ...prevState, ["add"]: false }));
+        
+   
 
-    const updatedComment = (e) => (setComment(e.target.value))
-    const handleUpDate = () => {
+    };
+
+    const saveUpdatedComment = (newComment) => {
         const url = `https://back-end-10.onrender.com/UPDATE/${data.id}`;
-        const updatedData = { ...data, comment: comment };
+        const updatedData = { ...data, comment: newComment };
         const filter = {
-            comment: updatedData.comment,
+            comment: updatedData.comment || " ",
             table: updatedData.source_table
-        }
+        };
         console.log(updatedData);
 
         axios.put(url, filter).then((result) => {
             console.log(result);
+            setComment(newComment);
+            setShowPopover((prevState) => ({ ...prevState, ["add"]: false }));
+            setShowPopover((prevState) => ({ ...prevState, ["like"]: false }));
+            setEditMode(false);
         }).catch((error) => {
             console.log(error);
-        })
-    }
-
-  
+        });
+    };
 
     return (
-        <>
-            <Col>
-                <BootstrapCard className="custom-card h-100">
-
-                    <BootstrapCard.Img className="custom-card-img" variant="top" src={data.url_image} />
-                    <BootstrapCard.Body className='d-flex flex-column'>
-                        <BootstrapCard.Text className="custom-card-title">
-                            {data.music_name}
-                        </BootstrapCard.Text>
-                        <BootstrapCard.Text className="custom-card-text">
-                            {data.singer_name}
-                        </BootstrapCard.Text>
-                        {props.location === 'library' ? (
-                            <BootstrapCard.Text className="custom-card-text">
-                                <>
-                                    <Form.Control
-                                        type="text"
-                                        name='comment'
-                                        placeholder="Enter updated comment"
-                                        value={comment}
-                                        onChange={updatedComment}
-                                    />
-                                    <Button
-                                        variant="primary"
-                                        className="ml-1 flex-grow-1 mr-2 btn-pg"
-                                        onClick={handleUpDate}
-                                    >
-                                        Update
-                                    </Button>
-                                </>
+        <Col>
+            <BootstrapCard className="custom-card h-100">
+                <BootstrapCard.Img className="custom-card-img" variant="top" src={data.url_image} />
+                <BootstrapCard.Body className="d-flex flex-column">
+                    <BootstrapCard.Text className="custom-card-title">
+                        {data.music_name}
+                    </BootstrapCard.Text>
+                    <BootstrapCard.Text className="custom-card-text">
+                        {data.singer_name}
+                    </BootstrapCard.Text>
+                    {props.location === 'library' ? (
+                        <div className="custom-comment-section">
+                            <BootstrapCard.Text className="custom-card-comment">
+                                {comment}
                             </BootstrapCard.Text>
-                        ) : null}
-
-                        <div className="mt-auto d-flex justify-content-between">
-                            {props.location === 'library' ? (
-                                <>
-                                    <Button variant="primary" className="mr-1 flex-grow-1 mr-2 btn-sm" onClick={handleShowModal}>
-                                        <FontAwesomeIcon icon={faPlay} />
-                                    </Button>
-                                    <Button variant="danger" className="ml-1 flex-grow-1 mr-2 btn-sm" onClick={handleDelete}>
-                                        <FontAwesomeIcon icon={faTrash} />
-                                    </Button>
-                                </>
-
-                            ) : (
-                                <>
-                                    <AddCommentPopover
-                                        songId={data.id}
-                                        data={data}
-                                        actionType="liked"
-                                        show={showPopover.like}
-                                        onShow={() => handleShowPopover('like')}
-                                        onHide={() => handleHidePopover('like')}
-                                        triggerElement={<Button variant="success" className="mx-1 flex-grow-1 custom-button" onClick={() => handleShowPopover('like')}>
-                                            <FontAwesomeIcon icon={faHeart} />
-                                        </Button>}
-                                    />
-                                    <AddCommentPopover
-
-                                        songId={data.id}
-                                        data={data}
-                                        actionType="playlist"
-                                        show={showPopover.add}
-                                        onShow={() => handleShowPopover('add')}
-                                        onHide={() => handleHidePopover('add')}
-                                        triggerElement={<Button variant="warning" className="mx-1 flex-grow-1 custom-button" onClick={() => handleShowPopover('add')}>
-                                            <FontAwesomeIcon icon={faPlus} />
-                                        </Button>}
-                                    />
-                                    <Button variant="primary" className="ml-1 flex-grow-1 custom-button" onClick={handleShowModal}>
-                                        <FontAwesomeIcon icon={faPlay} />
-                                    </Button>
-                                </>
-                            )}
+                            <AddCommentPopover
+                                songId={data.id}
+                                data={data}
+                                actionType="edit"
+                                show={showPopover.edit}
+                                onShow={() => handleShowPopover('edit')}
+                                onHide={() => handleHidePopover('edit')}
+                                triggerElement={<Button variant="secondary" className="ml-1 mr-2 btn-pg custom-card-update-button col-3" onClick={handleUpdate}>
+                                    <FontAwesomeIcon icon={faEdit} className="mr-2" />
+                                </Button>}
+                                editMode={editMode}
+                                initialComment={comment}
+                                saveComment={saveUpdatedComment}
+                                hidePopover={() => handleHidePopover('edit')}
+                            />
                         </div>
-                    </BootstrapCard.Body>
-                </BootstrapCard>
-            </Col>
+                    ) : null}
+
+                    <div className="mt-auto d-flex justify-content-between">
+                        {props.location === 'library' ? (
+                            <>
+                                <Button variant="primary" className="mr-1 flex-grow-1 mr-2 btn-sm" onClick={handleShowModal}>
+                                    <FontAwesomeIcon icon={faPlay} />
+                                </Button>
+                                <Button variant="danger" className="ml-1 flex-grow-1 mr-2 btn-sm" onClick={handleDelete}>
+                                    <FontAwesomeIcon icon={faTrash} />
+                                </Button>
+                            </>
+                        ) : (
+                            <>
+                                <AddCommentPopover
+                                    songId={data.id}
+                                    data={data}
+                                    actionType="liked"
+                                    show={showPopover.like}
+                                    onShow={() => handleShowPopover('like')}
+                                    onHide={() => handleHidePopover('like')}
+                                    triggerElement={<Button variant="success" className="mx-1 flex-grow-1 custom-button" onClick={() => handleShowPopover('like')}>
+                                        <FontAwesomeIcon icon={faHeart} />
+                                    </Button>}
+                                />
+                                <AddCommentPopover
+                                    songId={data.id}
+                                    data={data}
+                                    actionType="playlist"
+                                    show={showPopover.add}
+                                    onShow={() => handleShowPopover('add')}
+                                    onHide={() => handleHidePopover('add')}
+                                    triggerElement={<Button variant="warning" className="mx-1 flex-grow-1 custom-button" onClick={() => handleShowPopover('add')}>
+                                        <FontAwesomeIcon icon={faPlus} />
+                                    </Button>}
+                                />
+                                <Button variant="primary" className="ml-1 flex-grow-1 custom-button" onClick={handleShowModal}>
+                                    <FontAwesomeIcon icon={faPlay} />
+                                </Button>
+                            </>
+                        )}
+                    </div>
+                </BootstrapCard.Body>
+            </BootstrapCard>
             <$Modal handleCloseModal={handleCloseModal} showModal={showModal} music={props.data} />
-        </>
+        </Col>
     );
 }
 
@@ -163,7 +167,7 @@ Cards.propTypes = {
         comment: PropTypes.string.isRequired,
     }).isRequired,
     location: PropTypes.string.isRequired,
-    deleteSong: PropTypes.func,
+    handleDelete: PropTypes.func,
     addToLiked: PropTypes.func,
     addToPlaylist: PropTypes.func,
 };

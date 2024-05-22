@@ -3,7 +3,7 @@ import axios from 'axios';
 import './search.css';
 import SearchResult from './SearchResult/SearchResult';
 
-function Search() {
+function Search(props) {
   const [music, setMusic] = useState({});
   const [query, setQuery] = useState('');
   const [storedQuery, setStoredQuery] = useState('');
@@ -28,7 +28,7 @@ function Search() {
     const filterItems = props.music.filter((item) => {
       return item.title.toLowerCase().includes(value);
     });
-    setFilteredMusic(filterItems); // Update the filtered music state
+   // setFilteredMusic(filterItems); // Update the filtered music state
   };
 
   const handleKeyDown = (event) => {

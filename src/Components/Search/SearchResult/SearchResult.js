@@ -3,7 +3,7 @@ import { Container, Row, Col, Card as BootstrapCard, Button } from 'react-bootst
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPlus, faHeart } from '@fortawesome/free-solid-svg-icons';
 import './SearchResult.css';
-import $Modal from '/home/reem/Front-End/src/Components/Modal/Modal.js';
+//import $Modal from '/home/reem/Front-End/src/Components/Modal/Modal.js';
 import AddCommentPopover from '../../Popover/AddCommentPopover';
 
 // const jsonData = 
