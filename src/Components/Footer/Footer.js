@@ -1,18 +1,10 @@
-
-
-
 import React, { useState } from 'react';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import emailjs from 'emailjs-com';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../Footer/Footer.css';
 import { ToastContainer } from 'react-toastify';
-
-
-import facebookImg from '../assets/icons/facebook.png';
 
 function Footer() {
   const [email, setEmail] = useState('');
