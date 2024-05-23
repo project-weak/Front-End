@@ -4,6 +4,8 @@ import { useState, useRef, useEffect } from "react";
 import CardList from "../cardLIst/cardList.js";
 import axios from "axios";
 import NavBar from '../NavBar/NavBar.js';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Library() {
     const [playLists, setPlayLists] = useState({});
@@ -15,7 +17,7 @@ function Library() {
     }
 
     function getLiked() {
-        const getUrl = `https://back-end-10.onrender.com/favorite`;
+        const getUrl = `${process.env.REACT_APP_URL}/favorite`;
         axios.get(getUrl)
             .then((response) => {
                 const data = response.data;
@@ -34,6 +36,7 @@ function Library() {
     return (
         <>
             <NavBar />
+            <ToastContainer />
             <CardList data={playLists} location="library" handleDelete={handleDeleteData}/>
         </>
     );

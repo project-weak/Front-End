@@ -2,7 +2,7 @@ import './App.css';
 import Home from './Components/Home/Home';
 import About from './Components/About/About';
 import Library from './Components/your_library/Library'
-import Search from './Components/Search/search';
+// import Search from './Components/Search/search';
 import SearchResult from './Components/Search/SearchResult/SearchResult';
 
 
