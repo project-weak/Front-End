@@ -133,10 +133,7 @@ function Cards(props) {
                                     <Button variant="primary" className="mr-1 flex-grow-1 mr-2 btn-sm" onClick={handleShowModal}>
                                         <FontAwesomeIcon icon={faPlay} />
                                     </Button>
-                                    <Button variant="danger" className="ml-1 flex-grow-1 mr-2 btn-sm" onClick={() => {
-
-                                        handleDelete()
-                                    }}>
+                                    <Button variant="danger" className="ml-1 flex-grow-1 mr-2 btn-sm" onClick={() => {handleDelete()}}>
                                         <FontAwesomeIcon icon={faTrash} />
                                     </Button>
                                 </>
