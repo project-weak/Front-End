@@ -1,9 +1,10 @@
 .custom-card {
     width: 20rem;
-    background-color: #2C2C2C !important; 
+    background-color: hsl(220, 69%, 15%) !important;
     color: #fdf6fd !important;
     font-size: 20px !important;
-    font-weight: 700 !important;
+    font-family: 'Monaco';
+    font-weight: 500 ;
     border: none !important;
     border-radius: 10px !important;
     overflow: hidden !important;
@@ -23,14 +24,14 @@
 }
 .custom-card-title {
     color: #E3FEF7;
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin-bottom: 0.5rem;
     text-align: center;
 }
 
 .custom-card-text {
     color: #fdf6fd;
-    font-size: 0.7rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -70,14 +71,14 @@
 }
 
 .custom-card .btn-warning {
-    background-color: #FFD700 !important; 
-    border-color: #FFD700 !important;
+    background-color: #1E90FF !important; 
+    border-color: #1E90FF !important;
     color: #fff !important;
 }
 
 .custom-card .btn-warning:hover {
-    background-color: hsl(47, 94%, 40%) !important;
-    border-color: #FFC700 !important;
+    background-color: hsl(206, 94%, 40%) !important;
+    border-color: #2191ff !important;
 }
 .custom-card {
     transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
@@ -96,7 +97,7 @@
 }
 
 .custom-button:hover {
-    background-color: hsl(45, 94%, 56%);
+    /* background-color: hsl(45, 94%, 56%); */
     color: #212529;
 }
 

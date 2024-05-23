@@ -12,7 +12,7 @@ function Search(props) {
   useEffect(() => {
     const getMusicData = async () => {
       try {
-        const url = `https://back-end-10.onrender.com/`;
+        const url = `${process.env.REACT_APP_URL}/`;
         const response = await axios.get(url);
         console.log(response.data);
         setMusic(response.data);

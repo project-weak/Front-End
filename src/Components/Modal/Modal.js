@@ -1,4 +1,3 @@
-import React from 'react';
 import { Modal as BootstrapModal, Button } from 'react-bootstrap';
 import SoundPlayer from '../SoundPlayer/SoundPlayer';
 import './Modal.css'; 
