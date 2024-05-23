@@ -9,7 +9,7 @@ function Home() {
   const [music, setMusic] = useState([]);
 
   const getMusicData = () => {
-    const url = `${process.env.REACT_APP_URL}/`;
+    const url = `https://back-end-10.onrender.com/`;
     axios.get(url)
       .then((response) => {
         console.log(response.data);
