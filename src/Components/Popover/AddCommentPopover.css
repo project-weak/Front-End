@@ -1,14 +1,10 @@
 #popover-basic {
-    max-width: 300px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); 
-    border: 1px solid #444; 
-    border-radius: 10px;
+    max-width: 100%; /* تحديد أقصى عرض للبوب ​​أوفر */
 }
 
 .popover-header {
     background-color: #333;
     color: #fff;
-    border-bottom: 1px solid #444;
     border-top-left-radius: 10px; 
     border-top-right-radius: 10px; 
     padding: 10px 15px;
@@ -22,53 +18,12 @@
     border-bottom-right-radius: 10px; 
 }
 
-.btn-primary {
-    background-color: #E3FEF7;
-    color: #2C2C2C;
-    border: none;
-    border-radius: 5px; 
-    padding: 5px 10px; 
-    margin-left: 10px; 
-}
-
-.btn-primary:hover {
-    background-color: #D1F3EC;
-    color: #2C2C2C;
-}
-
+.btn-primary,
 .btn-secondary {
-    background-color: #555;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px; 
-    margin-right: 10px; 
-}
-
-.btn-secondary:hover {
-    background-color: #666;
-    color: #fff;
+    width: 45%; /* تعيين عرض الأزرار */
 }
 
 .form-control {
-    background-color: #444; 
-    color: #fff; 
-    border: 1px solid #555; 
-    border-radius: 5px; 
-    padding: 5px 10px; 
-}
-
-.form-control:focus {
-    background-color: #555; 
-    color: #fff;
-    border-color: #777; 
-    box-shadow: none; 
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.d-flex.justify-content-between {
-    margin-top: 10px;
+    width: calc(100% - 20px); /* تعيين عرض مربع النص مع الهامش */
+    margin-bottom: 10px; /* زيادة المسافة بين حقل النص والأزرار */
 }

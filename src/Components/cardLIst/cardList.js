@@ -31,6 +31,7 @@ function CardList(props) {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
+                    dots: false // إخفاء النقاط في الشاشات الصغيرة
                 }
             },
             {
@@ -38,6 +39,7 @@ function CardList(props) {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
+                    dots: false // إخفاء النقاط في الشاشات الصغيرة
                 }
             }
         ]
