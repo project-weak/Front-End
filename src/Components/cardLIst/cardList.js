@@ -22,21 +22,7 @@ function CardList(props) {
     const handleAfterChange = (sectionIndex, current) => {
         setActiveSlide(prevState => ({ ...prevState, [sectionIndex]: current }));
     };
-    const [state, setState] = useState(0);
-    // const {id, name, image, title, quote} = data[state];
 
-    // const Next = () => {
-    //     setState((state + 1) % People.length);//increasing the index value
-    //     }
-    //     const Prev = () => {
-    //     const newState = state -1;
-    //     if(newState < 0) {
-    //     setState(People.length-1);
-    //     }
-    //     else {
-    //     setState(state - 1);//decreasing the index value
-    //     }
-    //     }
     return (
         <div className='cardlist-container'>
             {sections.map((section, sectionIndex) => (
