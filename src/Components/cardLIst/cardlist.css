@@ -1,13 +1,10 @@
 body {
-    /* background-color: hsl(0, 0%, 3%); */
     height: 100%;
 }
 
 .cardlist-container {
     padding: 20px;
-    /* background-color: hsl(0, 0%, 9%); */
     border: 2px solid #181717;
-    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); */
 }
 
 .slider-class {
@@ -19,11 +16,14 @@ body {
 }
 
 .section-title {
-    background-color: #08142b;/**/
+    background-color: #08142b;
     color: #fff;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-transform: capitalize;
+    font-family: 'Monaco';
+    font-weight: 900;
 }
 
 .slider-container {
@@ -33,7 +33,6 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
     padding: 50px;
-
 }
 
 .slide-number {
@@ -41,4 +40,38 @@ body {
     margin-top: 10px;
     font-size: 16px;
     color: #aaa7a7;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .section-title {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-container {
+        padding: 20px;
+    }
+    .section-title {
+        font-size: 1.1em;
+    }
+    .slider-class {
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-container {
+        padding: 10px;
+    }
+    .section-title {
+        font-size: 1em;
+    }
+    .slider-class {
+        height: auto;
+    }
+    .cardlist-container .section {
+        margin: 20px 5px;
+    }
 }

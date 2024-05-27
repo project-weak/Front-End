@@ -1,5 +1,4 @@
 import './About.css';
-import React from 'react';
 import AboutusCard from "../AboutusCard/AboutusCard";
 import reem from "../../images/reem.jpeg";
 import fadi from "../../images/fadi.jpeg";

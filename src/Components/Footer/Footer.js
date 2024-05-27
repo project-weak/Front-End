@@ -1,18 +1,9 @@
-
-
-
-import React, { useState } from 'react';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import  { useState } from 'react';
 import { Link } from 'react-router-dom';
 import emailjs from 'emailjs-com';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../Footer/Footer.css';
-import { ToastContainer } from 'react-toastify';
-
-
-import facebookImg from '../assets/icons/facebook.png';
 
 function Footer() {
   const [email, setEmail] = useState('');
@@ -20,7 +11,7 @@ function Footer() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-     
+
     const serviceID = 'service_5qtneyp';
     const templateID = 'template_trhhmpm';
     const userID = 'GlJO8XwDDD2YeuMsz';
@@ -28,17 +19,12 @@ function Footer() {
     emailjs.sendForm(serviceID, templateID, e.target, userID)
       .then((result) => {
         console.log(result.text);
-        toast.success('Email sent successfully!', {
-          // position: toast.POSITION.BOTTOM_RIGHT;
-        });
+        toast.success('Email sent successfully!');
       }, (error) => {
         console.log(error.text);
-        toast.error('Error sending email.', {
-          // position: toast.POSITION.BOTTOM_RIGHT
-
-        });
+        toast.error('Error sending email.');
       });
-    console.log(`Email sent from: ${email} with message: ${message}`);  
+    console.log(`Email sent from: ${email} with message: ${message}`);
   };
 
   return (
@@ -76,7 +62,7 @@ function Footer() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <input  
+            <input
               type="text"
               placeholder="Send message"
               value={message}
@@ -87,8 +73,7 @@ function Footer() {
         </div>
       </footer>
       <ToastContainer />
-    
-     </>
+    </>
   );
 }
 

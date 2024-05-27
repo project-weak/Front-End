@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { Container } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import Search from '../Search/search';
-///////////////////////////////////////////////////////
+
 import './SliderHome.css';
 
 function SliderHome() {
@@ -24,7 +24,7 @@ function SliderHome() {
         pauseOnHover: false,
     };
 
-    const sliderStyle = found ? { visibility: 'hidden' } : {}; 
+    const sliderStyle = found ? { visibility: 'hidden' } : {}; // Apply style based on 'found'
 
     return (
         <>

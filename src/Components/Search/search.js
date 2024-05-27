@@ -12,7 +12,7 @@ function Search(props) {
   useEffect(() => {
     const getMusicData = async () => {
       try {
-        const url = `https://back-end-10.onrender.com/`;
+        const url = `${process.env.REACT_APP_URL}/`;
         const response = await axios.get(url);
         setMusic(response.data);
       } catch (error) {
@@ -79,7 +79,6 @@ function Search(props) {
           placeholder="Search for an artist or a song"
           className="input"
         />
-
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill=""
