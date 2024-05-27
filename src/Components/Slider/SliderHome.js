@@ -2,7 +2,7 @@ import './SliderHome.css';
 import Slider from "react-slick";
 import { Container } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import Search from '../Search/search';
+// import Search from '../Search/search';
 
 function SilderHome() {
     const settings = {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -7,6 +7,7 @@ import Cards from '../Card/Card';
 
 function CardList(props) {
     const { data, location } = props;
+    console.log(props);
     const [activeSlide, setActiveSlide] = useState({});
     const keys = Object.keys(data);
 
@@ -21,7 +22,21 @@ function CardList(props) {
     const handleAfterChange = (sectionIndex, current) => {
         setActiveSlide(prevState => ({ ...prevState, [sectionIndex]: current }));
     };
+    const [state, setState] = useState(0);
+    // const {id, name, image, title, quote} = data[state];
 
+    // const Next = () => {
+    //     setState((state + 1) % People.length);//increasing the index value
+    //     }
+    //     const Prev = () => {
+    //     const newState = state -1;
+    //     if(newState < 0) {
+    //     setState(People.length-1);
+    //     }
+    //     else {
+    //     setState(state - 1);//decreasing the index value
+    //     }
+    //     }
     return (
         <div className='cardlist-container'>
             {sections.map((section, sectionIndex) => (

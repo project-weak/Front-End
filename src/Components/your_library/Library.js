@@ -1,10 +1,10 @@
 import "./Library.css";
 import "../cardLIst/cardlist.css";
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import CardList from "../cardLIst/cardList.js";
 import axios from "axios";
 import NavBar from '../NavBar/NavBar.js';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Library() {

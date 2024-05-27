@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Card as BootstrapCard, Button } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPlus, faHeart } from '@fortawesome/free-solid-svg-icons';
+// import { Container, Row, Col, Card as BootstrapCard, Button } from 'react-bootstrap';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faPlay, faPlus, faHeart } from '@fortawesome/free-solid-svg-icons';
 import './SearchResult.css';
 import CardList from '../../cardLIst/cardList';
 
