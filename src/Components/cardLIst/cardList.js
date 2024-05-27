@@ -10,12 +10,47 @@ function CardList(props) {
     const [activeSlide, setActiveSlide] = useState({});
     const keys = Object.keys(data);
 
+    const commonSettings = {
+        dots: true,
+        arrows: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        rows: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    dots: false // إخفاء النقاط في الشاشات الصغيرة
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: false // إخفاء النقاط في الشاشات الصغيرة
+                }
+            }
+        ]
+    };
+
     const sections = location === "home" ? [
-        { title: keys[0], songs: data?.papulor?.slice(0) || [], sliderSettings: { dots: true, arrows: true, infinite: false, speed: 500, slidesToShow: 1, slidesToScroll: 1, rows: 1, slidesPerRow: 4 } },
-        { title: keys[1], songs: data?.top?.slice(0) || [], sliderSettings: { dots: true, arrows: true, infinite: false, speed: 500, slidesToShow: 1, slidesToScroll: 1, rows: 1, slidesPerRow: 4 } },
+        { title: keys[0], songs: data?.popular?.slice(0) || [], sliderSettings: commonSettings },
+        { title: keys[1], songs: data?.top?.slice(0) || [], sliderSettings: commonSettings },
     ] : [
-        { title: keys[0], songs: data?.Liked?.slice(0) || [], sliderSettings: { dots: true, arrows: true, infinite: false, speed: 500, slidesToShow: 1, slidesToScroll: 1, rows: 1, slidesPerRow: 4 } },
-        { title: keys[1], songs: data?.Playlist?.slice(0) || [], sliderSettings: { dots: true, arrows: true, infinite: false, speed: 500, slidesToShow: 1, slidesToScroll: 1, rows: 1, slidesPerRow: 4 } },
+        { title: keys[0], songs: data?.Liked?.slice(0) || [], sliderSettings: commonSettings },
+        { title: keys[1], songs: data?.Playlist?.slice(0) || [], sliderSettings: commonSettings },
     ];
 
     const handleAfterChange = (sectionIndex, current) => {
@@ -29,7 +64,7 @@ function CardList(props) {
                     <h2 className='section-title'>{section.title} Songs</h2>
                     <div className="slider-container">
                         <Slider className="slider-class" {...section.sliderSettings} afterChange={(current) => handleAfterChange(sectionIndex, current)}>
-                            {section.songs.map((song,index) => (
+                            {section.songs.map((song, index) => (
                                 <div key={index}>
                                     <Cards id={String(song.id)} data={song} location={location} filteredMusic={props.filteredMusic} handleDelete={props.handleDelete} />
                                 </div>

@@ -1,6 +1,6 @@
 .custom-card {
     width: 20rem;
-    background-color: #2C2C2C !important; 
+    background-color: hsl(220, 69%, 15%) !important; 
     color: #fdf6fd !important;
     font-size: 20px !important;
     font-weight: 700 !important;
