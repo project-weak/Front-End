@@ -39,15 +39,45 @@ function Search(props) {
     }
   }, [storedQuery]);
 
-  const findMatchingResults = (searchQuery) => {
+  // const findMatchingResults = (searchQuery) => {
+  //   if (!music || Object.keys(music).length === 0) {
+  //     console.error('Data is undefined or empty');
+  //     return;
+  //   }
+
+  //   const lowerCaseQuery = searchQuery.toLowerCase();
+  //   const results = [];
+
+  //   for (const category in music) {
+  //     if (music.hasOwnProperty(category)) {
+  //       const items = music[category];
+  //       for (const item of items) {
+  //         if (
+  //           item.music_name.toLowerCase().includes(lowerCaseQuery) ||
+  //           item.singer_name.toLowerCase().includes(lowerCaseQuery)
+  //         ) {
+  //           results.push(item);
+  //         }
+  //       }
+  //     }
+  //   }
+
+    
+  //   if (results.length > 0) {
+  //     props.handleFound(); // Call handleFound if matching data is found
+      
+  //   }
+  //   setMatchingResults(results);
+  // };
+  const findMatchingResults = async (searchQuery) => {
     if (!music || Object.keys(music).length === 0) {
       console.error('Data is undefined or empty');
       return;
     }
-
+  
     const lowerCaseQuery = searchQuery.toLowerCase();
     const results = [];
-
+  
     for (const category in music) {
       if (music.hasOwnProperty(category)) {
         const items = music[category];
@@ -61,10 +91,18 @@ function Search(props) {
         }
       }
     }
-
-    setMatchingResults(results);
+  
     if (results.length > 0) {
-      props.handleFound(); // Call handleFound if matching data is found
+      // Call props.handleFound immediately
+      props.handleFound();
+  
+      // Delay setting matching results by 2 seconds
+      setTimeout(() => {
+        setMatchingResults(results);
+      }, 2000); // Delay for 2000 milliseconds (2 seconds)
+    } else {
+      // If no results, directly set matching results
+      setMatchingResults(results);
     }
   };
 
