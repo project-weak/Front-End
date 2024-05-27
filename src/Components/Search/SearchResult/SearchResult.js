@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Cards from '../../Card/Card';
-import '/home/reem/Front-End/src/Components/Search/SearchResult/SearchResult.css';
+import './SearchResult.css';
 
 function SearchResult({ data, location, handleDelete }) {
   return (
