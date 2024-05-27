@@ -1,45 +1,29 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Card as BootstrapCard, Button } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPlus, faHeart } from '@fortawesome/free-solid-svg-icons';
-import './SearchResult.css';
-import CardList from '../../cardLIst/cardList';
+import React from 'react';
+import PropTypes from 'prop-types';
+import Cards from '../../Card/Card';
+import '/home/reem/Front-End/src/Components/Search/SearchResult/SearchResult.css';
 
-
-
-
-
-
-function SearchResult(props) {
-  let data = props.data;
-
-  // let idd = dddd.music_name;
-  console.log(data);
-
-  const [showModal, setShowModal] = useState(false);
-  const [currentMusic, setCurrentMusic] = useState(null);
-  const [showPopover, setShowPopover] = useState({});
-
-  const handleCloseModal = () => setShowModal(false);
-  const handleShowModal = (music) => {
-    setCurrentMusic(music);
-    setShowModal(true);
-  };
-
-  const handleHidePopover = (type) => {
-    setShowPopover((prevState) => ({ ...prevState, [type]: false }));
-  };
-
-  const handleShowPopover = (type) => {
-    Object.keys(showPopover).forEach((key) => {
-      setShowPopover((prevState) => ({ ...prevState, [key]: key === type }));
-    });
-  };
-
+function SearchResult({ data, location, handleDelete }) {
   return (
-  
-    <CardList data={data} location="search" />
+    <div className='search-result-container'>
+      {data.map((item, index) => (
+        <div key={index} className='search-result-card'>
+          <Cards 
+            id={String(item.id)} 
+            data={item} 
+            location={location} 
+            handleDelete={handleDelete} 
+          />
+        </div>
+      ))}
+    </div>
   );
 }
+
+SearchResult.propTypes = {
+  data: PropTypes.array.isRequired,
+  location: PropTypes.string.isRequired,
+  handleDelete: PropTypes.func.isRequired,
+};
 
 export default SearchResult;
