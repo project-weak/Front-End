@@ -1,5 +1,5 @@
 
-.my-4 {
+/*.my-4 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
@@ -30,9 +30,34 @@
   } */
   
 
-  p{
+  /*p{
     display: flex;
     justify-content: center;
     align-items: center;
 
+  }*/
+
+  /* .search-result-card { */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; 
+    justify-content: center;  */
+    /* margin: 150px; */
+    /* width: 100%; */
+    /* z-index: -1; */
+    /* min-height: 300px;
+    margin-top: 600px; 
+    margin-right: 500px; */
+    
+  /* } */
+
+  .search-result-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin: 40px;
   }
+  
+
+  
