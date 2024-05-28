@@ -1,6 +1,7 @@
 import './Header.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import Search from '../Search/search';
 
 function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,6 +17,7 @@ function NavBar() {
         <span className="home"><Link className="act" to="/about">About Us</Link></span>
         <span className="home"><Link className="act" to="/Library">Library</Link></span>
         <span className="home"><Link className="act" to="/">Home</Link></span>
+        {/* <Search/> */}
       </div>
       <div className="menu-toggle" onClick={toggleMenu}>
         ☰
