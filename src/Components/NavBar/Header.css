@@ -6,21 +6,23 @@
   background-color: #163779;
 }
 
-.home-header {
+.in-about {
   width: 100%;
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 10px 20px;
   background-image: linear-gradient(180deg, rgba(0, 12, 107, 0.273), rgb(0, 13, 107, 0.5));
 }
 
-#logo {
+#logo-in-about {
   cursor: pointer;
   font-size: 30px;
   font-weight: bold;
   color: #00a7ff;
-  order: 1; /* اللوغو يظهر أولاً في اليسار */
+  /* order: 1;  */
+  /* اللوغو يظهر أولاً في اليسار */
 }
 
 #logo-s {
@@ -28,14 +30,15 @@
   margin-left: 5px;
 }
 
-#logo:hover #logo-s {
+#logo-in-about:hover #logo-s {
   color: #00a7ff;
 }
 
 .nav-links {
   display: flex;
   gap: 20px;
-  order: 3; /* روابط الصفحات تظهر في الجزء الأيمن */
+  /* order: 3; */
+   /* روابط الصفحات تظهر في الجزء الأيمن */
 }
 
 .home a {
@@ -61,13 +64,14 @@
 
 /* Responsive Styles */
 @media only screen and (max-width: 768px) {
-  .home-header {
+ .in-about {
     flex-direction: row;
     align-items: flex-start; 
   }
 
-  #logo {
-    order: 1; /* اللوغو يظهر في الجزء الأعلى */
+  #logo-in-about {
+    order: 1; 
+    /* اللوغو يظهر في الجزء الأعلى */
   }
 
   .nav-links {

@@ -6,8 +6,15 @@ import Search from '../Search/search';
 
 import './SliderHome.css';
 
+
+
 function SliderHome() {
     const [found, setFound] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
 
     function handleFound() {
         setFound(true);
@@ -28,13 +35,26 @@ function SliderHome() {
 
     return (
         <>
-            <header className='home-header'>
+            <header className='header-in-home'>
+
                 <div id="logo">Melody<span id="logo-s">Hub</span></div>
-                <span className="home"><Link className="act" to="/about">About Us</Link></span>
-                <span className="home"><Link className="act" to="/Library">Library</Link></span>
-                <span className="home"><Link className="act" to="/">Home</Link></span>
-                <Search handleFound={handleFound}/>
+                <section className='section-tab'>
+                    <div className={`nav-home ${menuOpen ? 'open' : ''}`}>
+                        <span className="tab-home"><Link className="act" to="/">Home</Link></span>
+                        <span className="tab-home"><Link className="act" to="/Library">Library</Link></span>
+                        <span className="tab-home"><Link className="act" to="/about">About Us</Link></span>
+                    </div>
+                </section>
+                <div className="menu-toggle-home" onClick={toggleMenu}>
+                    ☰
+                </div>
             </header>
+
+
+            <section className='section-search'>
+                <Search handleFound={handleFound} />
+            </section>
+
             <Slider {...settings} className="heroslider" style={sliderStyle}>
                 <div className="slideritem slideritem-01 mt0">
                     <Container >

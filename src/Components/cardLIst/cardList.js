@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -7,6 +7,7 @@ import Cards from '../Card/Card';
 
 function CardList(props) {
     const { data, location } = props;
+    console.log(props);
     const [activeSlide, setActiveSlide] = useState({});
     const keys = Object.keys(data);
 

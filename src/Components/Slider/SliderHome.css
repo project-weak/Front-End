@@ -8,17 +8,20 @@ body {
     overflow-x: hidden;
 }
 
-.home-header {
-    height: 60px;
+.header-in-home {
     width: 100%;
     position: absolute;
-    top: 0;
     z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add background for better visibility */
+}
+
+.section-search {
+    z-index: 2;
+    position: absolute;
+    top: 30px;
 }
 
 #logo {
@@ -41,12 +44,12 @@ body {
     color: #00a7ff;
 }
 
-.nav-links {
+/* .nav-links {
     display: flex;
     gap: 20px;
-}
+} */
 
-.home a {
+.tab-home a {
     color: #fff;
     font-weight: bold;
     text-decoration: none;
@@ -56,7 +59,7 @@ body {
     padding: 6px 15px;
 }
 
-.home a:hover {
+.tab-home a:hover {
     color: #00a7ff;
 }
 
@@ -129,45 +132,52 @@ body {
 
 /* Responsive Styles */
 /* باقي الأنماط كما هي */
+.menu-toggle-home {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
 
 @media only screen and (max-width: 768px) {
-    .slideritem {
-        height: 450px;
-    }
-
-    .slidercontent h1 {
-        font-size: 1.5rem;
-    }
-
-    .home-header {
+    .header-in-home {
         flex-direction: row;
-        align-items: flex-end; /* تعديل هنا لتجعل قائمة الروابط على اليمين */
-        padding: 10px;
+        align-items: flex-start;
     }
 
-    .nav-links {
+    .nav-home {
         flex-direction: column;
         display: none;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.8);
         padding: 10px 0;
-        align-items: flex-end; /* تعديل هنا لتجعل الروابط محاذية لليمين */
+        margin-left: 150px;
+        /* align-items: flex-end;  */
+        /* تحديد محاذاة روابط الصفحات إلى اليمين */
+        /* order: 2;  */
+        /* روابط الصفحات تظهر بعد اللوغو في الجزء الأسفل */
     }
 
-    .nav-links.open {
+    .nav-home.open {
         display: flex;
     }
 
-    .home {
+    .header-in-home {
         margin: 10px 0;
-        text-align: right; /* تعديل هنا لتجعل النص محاذي لليمين */
+        /* text-align: center; */
+
     }
 
-    .menu-toggle {
+    .menu-toggle-home {
         display: block;
+        /* order: 4; */
+        /* زر القائمة المنسدلة يظهر في الجزء الأسفل */
     }
 }
 
-.searchBar{
+
+
+/* .searchBar {
     margin-bottom: 300px;
-}
+} */

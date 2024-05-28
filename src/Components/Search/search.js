@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import SearchResult from './SearchResult/SearchResult';
 import './search.css';
@@ -114,8 +114,8 @@ function Search(props) {
           value={query}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
-          placeholder="Search for an artist or a song"
-          className="input"
+          placeholder="Search here..."
+          className="input-search"
         />
         <svg
           xmlns="http://www.w3.org/2000/svg"
