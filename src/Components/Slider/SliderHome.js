@@ -2,7 +2,7 @@ import './SliderHome.css';
 import Slider from "react-slick";
 import { Container } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-// import Search from '../Search/search';
+import Search from '../Search/search';
 
 function SilderHome() {
     const settings = {
@@ -23,7 +23,7 @@ function SilderHome() {
                 <span className="home"><Link className="act" to="/about">About Us</Link></span>
                 <span className="home"><Link className="act" to="/Library">Library</Link></span>
                 <span className="home"><Link className="act" to="/">Home</Link></span>
-                {/* <Search /> */}
+                <Search />
             </header>
             <Slider {...settings} className="heroslider">
                 <div className="slideritem slideritem-01 mt0">
